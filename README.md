@@ -3,7 +3,7 @@
 ## HowTo
 ```bash
 git submodule update --init
-go build
-cp leakin /usr/local/bin/
+export GOBIN=$GOPATH/bin
+go install
 leakin leaky-repo
 ```

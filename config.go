@@ -1,10 +1,10 @@
 package main
 
-type config struct {
+type configType struct {
 	Secrets map[string]string
 }
 
-var secrets string = `
+var configFile string = `
 secrets:
   aws_access_key_id: (?i)(?:A3T|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[\w-_]{12,}
   aws_patterns: (?i)(?:accesskeyid|secretaccesskey|aws_access_key_id|aws_secret_access_key)

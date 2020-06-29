@@ -23,20 +23,20 @@ const (
 )
 
 func main() {
-	config := getConfig().Secrets
+	secrets := getConfig().Secrets
 	patterns := make(map[string]*regexp.Regexp)
 
-	for key, value := range config {
+	for key, value := range secrets {
 		patterns[key] = regexp.MustCompile(value)
 	}
 
 	walkPath(os.Args[1], patterns)
 }
 
-func getConfig() config {
-	var config config
+func getConfig() configType {
+	var config configType
 
-	err := yaml.Unmarshal([]byte(secrets), &config)
+	err := yaml.Unmarshal([]byte(configFile), &config)
 	if err != nil {
 		panic(err)
 	}
@@ -67,7 +67,7 @@ func readFile(filename string, patterns map[string]*regexp.Regexp) {
 func searchText(data []byte, patterns map[string]*regexp.Regexp, filename string) {
 	filter := regexp.MustCompile("[[:^ascii:]]")
 	data = filter.ReplaceAll(data, []byte(""))
-	
+
 	for key, value := range patterns {
 		matches := value.FindAllString(string(data), -1)
 		for _, value := range matches {

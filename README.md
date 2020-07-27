@@ -1,5 +1,7 @@
 # secretsleak
 
+Regex-based secrets detection.
+
 ## HowTo
 ```bash
 git submodule update --init

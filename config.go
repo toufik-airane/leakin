@@ -6,6 +6,7 @@ type configType struct {
 
 var configFile string = `
 secrets:
+  FCM_server_key: (?i)(AAAA[a-zA-Z0-9_-]{7}:[a-zA-Z0-9_-]{140})
   aws_access_key_id: (?i)(?:A3T|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[\w-_]{12,}
   aws_patterns: (?i)(?:accesskeyid|secretaccesskey|aws_access_key_id|aws_secret_access_key)
   slack_api_token: (xox[aboprs]-([0-9a-zA-Z-]{8,})?)

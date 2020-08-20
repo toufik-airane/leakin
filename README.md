@@ -1,6 +1,6 @@
 # secretsleak
 
-Regex-based secrets detection.
+Regex-based secret detection.
 
 ## HowTo
 ```bash

@@ -1,9 +1,11 @@
 package main
 
 import (
+	"bytes"
 	"flag"
 	"fmt"
 	"io/ioutil"
+	"net/http"
 	"os"
 	"path/filepath"
 	"regexp"
@@ -31,10 +33,22 @@ func main() {
 	flag.StringVar(&root, "r", ".", "Root folder.")
 	flag.Parse()
 
-	viper.SetConfigName("config") // name of config file (without extension)
-	viper.SetConfigType("yaml")   // REQUIRED if the config file does not have the extension in the name
-	viper.AddConfigPath("https://github.com/test")
-	fmt.Printf("%s", viper.Get("secrets"))
+	resp, err := http.Get("https://raw.githubusercontent.com/toufik-airane/leakin/master/config.yml")
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	viper.ReadConfig(bytes.NewBuffer(body))
+	fmt.Printf("%s", body)
+	fmt.Printf("%s", viper.Get("test"))
+
+	/*
+		viper.SetConfigName("config")
+		viper.SetConfigType("yaml")
+		viper.AddConfigPath("https://raw.githubusercontent.com/toufik-airane/leakin/master/config.yml")
+		fmt.Printf("%s", viper.Get("secrets"))
+	*/
 	/*
 		secrets := getConfig()
 		patterns := make(map[string]*regexp.Regexp)

@@ -1,4 +1,0 @@
-[submodule "leaky-repo"]
-	path = leaky-repo
-	url = https://github.com/Plazmaz/leaky-repo.git
-	branch = master

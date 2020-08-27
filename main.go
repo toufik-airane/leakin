@@ -1,13 +1,14 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"regexp"
 
-	"gopkg.in/yaml.v3"
+	"github.com/spf13/viper"
 )
 
 const (
@@ -16,13 +17,16 @@ const (
 	green   = "\033[32m%s\033[0m"
 	yellow  = "\033[33m%s\033[0m"
 	blue    = "\033[34m%s\033[0m"
-	blueint = "\033[34m%d\033[0m"
 	magenta = "\033[35m%s\033[0m"
 	cyan    = "\033[36m%s\033[0m"
 	white   = "\033[97m%s\033[0m"
 )
 
 func main() {
+	var root string
+	flag.StringVar(&root, "r", ".", "Root folder.")
+	flag.Parse()
+
 	secrets := getConfig().Secrets
 	patterns := make(map[string]*regexp.Regexp)
 
@@ -30,18 +34,16 @@ func main() {
 		patterns[key] = regexp.MustCompile(value)
 	}
 
-	walkPath(os.Args[1], patterns)
+	walkPath(root, patterns)
 }
 
 func getConfig() configType {
-	var config configType
 
-	err := yaml.Unmarshal([]byte(configFile), &config)
-	if err != nil {
-		panic(err)
-	}
+	viper.SetConfigName("config") // name of config file (without extension)
+	viper.SetConfigType("yaml")   // REQUIRED if the config file does not have the extension in the name
+	viper.AddConfigPath("https://github.com/test")
 
-	return config
+	return viper.Get("secrets")
 }
 
 func walkPath(filename string, patterns map[string]*regexp.Regexp) {
@@ -71,7 +73,7 @@ func searchText(data []byte, patterns map[string]*regexp.Regexp, filename string
 	for key, value := range patterns {
 		matches := value.FindAllString(string(data), -1)
 		for _, value := range matches {
-			fmt.Printf(blue+" "+red+" "+yellow+"\n", filename, key, value)
+			fmt.Printf(white+" "+red+" "+white+"\n", filename, key, value)
 		}
 	}
 }

@@ -22,28 +22,29 @@ const (
 	white   = "\033[97m%s\033[0m"
 )
 
+type configType struct {
+	Secrets map[string]string
+}
+
 func main() {
 	var root string
 	flag.StringVar(&root, "r", ".", "Root folder.")
 	flag.Parse()
 
-	secrets := getConfig().Secrets
-	patterns := make(map[string]*regexp.Regexp)
-
-	for key, value := range secrets {
-		patterns[key] = regexp.MustCompile(value)
-	}
-
-	walkPath(root, patterns)
-}
-
-func getConfig() configType {
-
 	viper.SetConfigName("config") // name of config file (without extension)
 	viper.SetConfigType("yaml")   // REQUIRED if the config file does not have the extension in the name
 	viper.AddConfigPath("https://github.com/test")
+	fmt.Printf("%s", viper.Get("secrets"))
+	/*
+		secrets := getConfig()
+		patterns := make(map[string]*regexp.Regexp)
 
-	return viper.Get("secrets")
+		for key, value := range secrets {
+			patterns[key] = regexp.MustCompile(value)
+		}
+
+		walkPath(root, patterns)
+	*/
 }
 
 func walkPath(filename string, patterns map[string]*regexp.Regexp) {

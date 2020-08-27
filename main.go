@@ -24,41 +24,42 @@ const (
 	white   = "\033[97m%s\033[0m"
 )
 
-type configType struct {
-	Secrets map[string]string
-}
-
 func main() {
-	var root string
-	flag.StringVar(&root, "r", ".", "Root folder.")
+	var folder string
+	flag.StringVar(&folder, "f", ".", "Scan a folder.")
 	flag.Parse()
 
-	resp, err := http.Get("https://raw.githubusercontent.com/toufik-airane/leakin/master/config.yml")
+	if folder == "" {
+		flag.PrintDefaults()
+		os.Exit(1)
+	}
+
+	resp, err := http.Get("https://gist.githubusercontent.com/toufik-airane/93336cc01c99f9044b4565cb5ec363f0/raw/config.yml")
 	if err != nil {
 		panic(err)
 	}
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+
+	viper.SetConfigType("yaml")
 	viper.ReadConfig(bytes.NewBuffer(body))
-	fmt.Printf("%s", body)
-	fmt.Printf("%s", viper.Get("test"))
+	fmt.Println(viper.Get("secrets"))
 
-	/*
-		viper.SetConfigName("config")
-		viper.SetConfigType("yaml")
-		viper.AddConfigPath("https://raw.githubusercontent.com/toufik-airane/leakin/master/config.yml")
-		fmt.Printf("%s", viper.Get("secrets"))
-	*/
-	/*
-		secrets := getConfig()
-		patterns := make(map[string]*regexp.Regexp)
+	var secrets map[string]string
 
-		for key, value := range secrets {
-			patterns[key] = regexp.MustCompile(value)
-		}
+	secrets = viper.GetStringMapString("secrets")
 
-		walkPath(root, patterns)
-	*/
+	patterns := make(map[string]*regexp.Regexp)
+
+	for key, value := range secrets {
+		patterns[key] = regexp.MustCompile(value)
+	}
+
+	walkPath(folder, patterns)
+
 }
 
 func walkPath(filename string, patterns map[string]*regexp.Regexp) {

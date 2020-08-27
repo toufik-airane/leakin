@@ -46,19 +46,16 @@ func main() {
 
 	viper.SetConfigType("yaml")
 	viper.ReadConfig(bytes.NewBuffer(body))
-	fmt.Println(viper.Get("secrets"))
 
-	var secrets map[string]string
+	var configString map[string]string
+	configString = viper.GetStringMapString("regexp")
+	configRegexp := make(map[string]*regexp.Regexp)
 
-	secrets = viper.GetStringMapString("secrets")
-
-	patterns := make(map[string]*regexp.Regexp)
-
-	for key, value := range secrets {
-		patterns[key] = regexp.MustCompile(value)
+	for key, value := range configString {
+		configRegexp[key] = regexp.MustCompile(value)
 	}
 
-	walkPath(folder, patterns)
+	walkPath(folder, configRegexp)
 
 }
 
@@ -79,7 +76,6 @@ func readFile(filename string, patterns map[string]*regexp.Regexp) {
 	}
 
 	searchText(data, patterns, filename)
-
 }
 
 func searchText(data []byte, patterns map[string]*regexp.Regexp, filename string) {

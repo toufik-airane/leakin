@@ -361,10 +361,10 @@ func readFile(filename string, config config) {
 
 func searchText(filename string, data []byte, config config) {
 	data = filter.ReplaceAll(data, []byte(""))
-	for _, value := range config.Checks {
-		matches := value.Compiled.FindAll(data, -1)
-		for _, value := range matches {
-			fmt.Printf(green+" "+red+"\n", filename, value)
+	for _, check := range config.Checks {
+		matches := check.Compiled.FindAll(data, -1)
+		for _, match := range matches {
+			fmt.Printf(blue+" "+white+" "+red+"\n", filename, check.Title, match)
 		}
 	}
 }

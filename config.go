@@ -11,12 +11,12 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "AWS Secret Key",
-			"regex": "aws(.{0,20})?['\\\"][0-9a-z\\/+]{40}['\\\"]",
+			"regex": "aws(.{0,20})?['\"][0-9a-z/+]{40}['\"]",
 			"severity": 7
 		},
 		{
 			"title": "AWS MWS key",
-			"regex": "amzn\\.mws\\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",
+			"regex": "amzn.mws.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",
 			"severity": 8
 		},
 		{
@@ -26,62 +26,62 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "AWS EC2 Internal",
-			"regex": "[0-9a-z.\\-_]+\\.compute(-1)?\\.internal",
+			"regex": "[0-9a-z.-_]+.compute(-1)?.internal",
 			"severity": 1
 		},
 		{
 			"title": "AWS EC2 External",
-			"regex": "ec2-[0-9a-z.\\-_]+\\.compute(-1)?\\.amazonaws\\.com",
+			"regex": "ec2-[0-9a-z.-_]+.compute(-1)?.amazonaws.com",
 			"severity": 1
 		},
 		{
 			"title": "AWS ELB",
-			"regex": "[0-9a-z.\\-_]+\\.elb\\.amazonaws\\.com",
+			"regex": "[0-9a-z.-_]+.elb.amazonaws.com",
 			"severity": 1
 		},
 		{
 			"title": "AWS ELB",
-			"regex": "[0-9a-z.\\-_]+\\.elb\\.[0-9a-z.\\-_]+\\.amazonaws\\.com",
+			"regex": "[0-9a-z.-_]+.elb.[0-9a-z.-_]+.amazonaws.com",
 			"severity": 1
 		},
 		{
 			"title": "AWS RDS",
-			"regex": "[0-9a-z.\\-_]+\\.rds\\.amazonaws\\.com",
+			"regex": "[0-9a-z.-_]+.rds.amazonaws.com",
 			"severity": 1
 		},
 		{
 			"title": "AWS ElasticCache",
-			"regex": "[0-9a-z.\\-_]+\\.cache\\.amazonaws\\.com",
+			"regex": "[0-9a-z.-_]+.cache.amazonaws.com",
 			"severity": 1
 		},
 		{
 			"title": "AWS S3 Endpoint",
-			"regex": "[a-zA-Z0-9.\\-_]+.s3.[a-zA-Z0-9.\\-_]+.amazonaws.com",
+			"regex": "[a-zA-Z0-9.-_]+.s3.[a-zA-Z0-9.-_]+.amazonaws.com",
 			"severity": 1
 		},
 		{
 			"title": "AWS S3 Endpoint",
-			"regex": "[0-9a-z.\\-_]+\\.s3-website[0-9a-z.\\-_]+\\.amazonaws\\.com",
+			"regex": "[0-9a-z.-_]+.s3-website[0-9a-z.-_]+.amazonaws.com",
 			"severity": 1
 		},
 		{
 			"title": "AWS S3 Bucket",
-			"regex": "s3://[0-9a-z.\\-_/]+",
+			"regex": "s3://[0-9a-z.-_/]+",
 			"severity": 1
 		},
 		{
 			"title": "AWS CloudFront",
-			"regex": "[0-9a-z.\\-_]+\\.cloudfront\\.net",
+			"regex": "[0-9a-z.-_]+.cloudfront.net",
 			"severity": 1
 		},
 		{
 			"title": "AWS API Gateway",
-			"regex": "[0-9a-z]+\\.execute-api\\.[0-9a-z.\\-_]+\\.amazonaws\\.com",
+			"regex": "[0-9a-z]+.execute-api.[0-9a-z.-_]+.amazonaws.com",
 			"severity": 1
 		},
 		{
 			"title": "Braintree API Key",
-			"regex": "access_token\\$production\\$[0-9a-z]{16}\\$[0-9a-f]{32}",
+			"regex": "access_token$production$[0-9a-z]{16}$[0-9a-f]{32}",
 			"severity": 9
 		},
 		{
@@ -106,7 +106,7 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "Facebook Client ID",
-			"regex": "(facebook|fb)(.{0,20})?['\\\"][0-9]{13,17}['\\\"]",
+			"regex": "(facebook|fb)(.{0,20})?['\"][0-9]{13,17}['\"]",
 			"severity": 1
 		},
 		{
@@ -116,27 +116,27 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "Facebook Secret Key",
-			"regex": "(facebook|fb)(.{0,20})?['\\\"][0-9a-f]{32}['\\\"]",
+			"regex": "(facebook|fb)(.{0,20})?['\"][0-9a-f]{32}['\"]",
 			"severity": 7
 		},
 		{
 			"title": "GitHub Token",
-			"regex": "github(.{0,20})?['\\\"][0-9a-z]{35,40}['\\\"]",
+			"regex": "github(.{0,20})?['\"][0-9a-z]{35,40}['\"]",
 			"severity": 9
 		},
 		{
 			"title": "Google Cloud Platform API key",
-			"regex": "(google|gcp|youtube|drive|yt)(.{0,20})?['\\\"][AIza[0-9a-z\\\\-_]{35}]['\\\"]",
+			"regex": "(google|gcp|youtube|drive|yt)(.{0,20})?['\"][AIza[0-9a-z-_]{35}]['\"]",
 			"severity": 9
 		},
 		{
 			"title": "Google API Key",
-			"regex": "AIza[0-9a-z\\-_]{35}",
+			"regex": "AIza[0-9a-z-_]{35}",
 			"severity": 7
 		},
 		{
 			"title": "Google Oauth ID",
-			"regex": "[0-9]+-[0-9a-z_]{32}\\.apps\\.googleusercontent\\.com",
+			"regex": "[0-9]+-[0-9a-z_]{32}.apps.googleusercontent.com",
 			"severity": 5
 		},
 		{
@@ -146,12 +146,12 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "LinkedIn Client ID",
-			"regex": "linkedin(.{0,20})?['\\\"][0-9a-z]{12}['\\\"]",
+			"regex": "linkedin(.{0,20})?['\"][0-9a-z]{12}['\"]",
 			"severity": 6
 		},
 		{
 			"title": "LinkedIn Secret Key",
-			"regex": "linkedin(.{0,20})?['\\\"][0-9a-z]{16}['\\\"]",
+			"regex": "linkedin(.{0,20})?['\"][0-9a-z]{16}['\"]",
 			"severity": 7
 		},
 		{
@@ -171,7 +171,7 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "Square API Key",
-			"regex": "sq0(atp|csp)-[0-9a-z\\-_]{22,43}",
+			"regex": "sq0(atp|csp)-[0-9a-z-_]{22,43}",
 			"severity": 9
 		},
 		{
@@ -196,7 +196,7 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "Telegram Secret",
-			"regex": "\\d{5,}:A[0-9a-z_\\-]{34,34}",
+			"regex": "d{5,}:A[0-9a-z_-]{34,34}",
 			"severity": 7
 		},
 		{
@@ -211,17 +211,17 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "Twitter Client ID",
-			"regex": "twitter(.{0,20})?['\\\"][0-9a-z]{18,25}['\\\"]",
+			"regex": "twitter(.{0,20})?['\"][0-9a-z]{18,25}['\"]",
 			"severity": 6
 		},
 		{
 			"title": "Twitter Secret Key",
-			"regex": "twitter(.{0,20})?['\\\"][0-9a-z]{35,44}['\\\"]",
+			"regex": "twitter(.{0,20})?['\"][0-9a-z]{35,44}['\"]",
 			"severity": 7
 		},
 		{
 			"title": "domain",
-			"regex": "http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))[^><'\" \n)]+",
+			"regex": "http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*(),]|(?:%[0-9a-fA-F][0-9a-fA-F]))[^><'\" \n)]+",
 			"severity": "5"
 		},
 		{
@@ -256,7 +256,7 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "domain",
-			"regex": "http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))[^><'\" \n)]+",
+			"regex": "http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*(),]|(?:%[0-9a-fA-F][0-9a-fA-F]))[^><'\" \n)]+",
 			"severity": "5"
 		},
 		{
@@ -266,22 +266,22 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "artifactory",
-			"regex": "(artifactory.{0,50}(\\\"|')?[a-zA-Z0-9=]{112}(\\\"|')?)",
+			"regex": "(artifactory.{0,50}(\"|')?[a-zA-Z0-9=]{112}(\"|')?)",
 			"severity": "5"
 		},
 		{
 			"title": "azure_blob",
-			"regex": "(http(?:s)://.[^><'\" \n\\)]+.blob.core.windows.net/.[^><'\" \n/)]+./)",
+			"regex": "(http(?:s)://.[^><'\" \n)]+.blob.core.windows.net/.[^><'\" \n/)]+./)",
 			"severity": "5"
 		},
 		{
 			"title": "codeclimate",
-			"regex": "(codeclima.{0,50}(\\\"|')?[0-9a-f]{64}(\\\"|')?)",
+			"regex": "(codeclima.{0,50}(\"|')?[0-9a-f]{64}(\"|')?)",
 			"severity": "5"
 		},
 		{
 			"title": "digitalocean_space",
-			"regex": "(http(?:s)://[^><\\.'\" \n\\)]+.[^><\\.'\" \n\\)]+.[^><\\.'\" \n\\)]+.digitaloceanspaces.com)",
+			"regex": "(http(?:s)://[^><.'\" \n)]+.[^><.'\" \n)]+.[^><.'\" \n)]+.digitaloceanspaces.com)",
 			"severity": "5"
 		},
 		{
@@ -305,23 +305,13 @@ var configbyte = []byte(`
 			"severity": "5"
 		},
 		{
-			"title": "gcp_client_secret",
-			"regex": "("client_secret":"[a-zA-Z0-9-]{24}")",
-			"severity": "5"
-		},
-		{
-			"title": "gcp_service_account",
-			"regex": "("type":"service_account")",
-			"severity": "5"
-		},
-		{
 			"title": "github",
 			"regex": "(github(.{0,20})?(?-i)['\"][0-9a-zA-Z]{35,40}['\"])",
 			"severity": "5"
 		},
 		{
 			"title": "github_access_token",
-			"regex":"\[a-zA-Z0-9_-]*:[a-zA-Z0-9_\-]+@github\.com*",
+			"regex":"[a-zA-Z0-9_-]*:[a-zA-Z0-9_-]+@github.com*",
 			"severity": "5"
 		},
 		{
@@ -331,7 +321,7 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "google_oauth",
-			"regex":"(ya29\.[0-9A-Za-z\-_]+)",
+			"regex":"(ya29.[0-9A-Za-z-_]+)",
 			"severity": "5"
 		},
 		{
@@ -346,12 +336,12 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "hockeyapp",
-			"regex": "hockey.{0,50}(\\\"|')?[0-9a-f]{32}(\\\"|')?",
+			"regex": "hockey.{0,50}(\"|')?[0-9a-f]{32}(\"|')?",
 			"severity": "5"
 		},
 		{
 			"title": "json_web1_token",
-			"regex":"(eyJ[a-zA-Z0-9-]{10,}\.eyJ[a-zA-Z0-9-]{10,}\.[a-zA-Z0-9-]{10,})",
+			"regex":"(eyJ[a-zA-Z0-9-]{10,}.eyJ[a-zA-Z0-9-]{10,}.[a-zA-Z0-9-]{10,})",
 			"severity": "5"
 		},
 		{
@@ -391,17 +381,17 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "outlook_team",
-			"regex": "(https\\://outlook\\.office.com/webhook/[0-9a-f-]{36}\\@)",
+			"regex": "(https://outlook.office.com/webhook/[0-9a-f-]{36}@)",
 			"severity": "5"
 		},
 		{
 			"title": "paypal",
-			"regex":"\[a-zA-Z0-9]{1,2}([E][A-Z]{1}[a-zA-Z0-9_-]{78})[a-zA-Z0-9]{1,2}$",
+			"regex":"[a-zA-Z0-9]{1,2}([E][A-Z]{1}[a-zA-Z0-9_-]{78})[a-zA-Z0-9]{1,2}$",
 			"severity": "5"
 		},
 		{
 			"title": "paypal_braintree_access_token",
-			"regex":"(access_token\$production\$[0-9a-z]{16}\$[0-9a-f]{32})",
+			"regex":"(access_token$production$[0-9a-z]{16}$[0-9a-f]{32})",
 			"severity": "5"
 		},
 		{
@@ -411,27 +401,27 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "sauce_token",
-			"regex": "(sauce.{0,50}(\\\"|')?[0-9a-f-]{36}(\\\"|')?)",
+			"regex": "(sauce.{0,50}(\"|')?[0-9a-f-]{36}(\"|')?)",
 			"severity": "5"
 		},
 		{
 			"title": "sendgrid_api_key",
-			"regex":"(SG\.[a-zA-Z0-9-]{16,32}\.[a-zA-Z0-9-]{16,64})",
+			"regex":"(SG.[a-zA-Z0-9-]{16,32}.[a-zA-Z0-9-]{16,64})",
 			"severity": "5"
 		},
 		{
 			"title": "sonarqube_docs_api_key",
-			"regex": "(sonar.{0,50}(\\\"|')?[0-9a-f]{40}(\\\"|')?)",
+			"regex": "(sonar.{0,50}(\"|')?[0-9a-f]{40}(\"|')?)",
 			"severity": "5"
 		},
 		{
 			"title": "square_app_secret",
-			"regex":"(sq0[a-z]{3}-[0-9A-Za-z\-_]{20,50})",
+			"regex":"(sq0[a-z]{3}-[0-9A-Za-z-_]{20,50})",
 			"severity": "5"
 		},
 		{
 			"title": "ssh_password",
-			"regex": "(sshpass -p.*['|\\\"])",
+			"regex": "(sshpass -p.*['|\"])",
 			"severity": "5"
 		},
 		{
@@ -461,7 +451,7 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "apikey_patterns",
-			"regex": "(?i)apikey[:](?:["']?[a-zA-Z0-9-_|]+["']?)",
+			"regex": "(?i)apikey[:](?:['\"]?[a-zA-Z0-9-_|]+['\"]?)",
 			"severity": "5"
 		},
 		{
@@ -3899,6 +3889,13 @@ var configbyte = []byte(`
 			"regex": "access[_-]?key[_-]?secret(=| =|:| :)",
 			"severity": "5"
 		}
-    ]
+
+
+
+
+
+
+
+		]
 }
 `)

@@ -286,7 +286,7 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "aws_access_key_id",
-			"regex":"(?i)(?:A3T|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[\w-_]{12,}",
+			"regex":"(?i)(?:A3T|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[a-zA-Z0-9-_]{12,}",
 			"severity": "5"
 		},
 		{
@@ -376,10 +376,7 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "gcp_client_secret",
-			"regex": "("client_secret":"[\w-
-			]{
-				24
-			}")",
+			"regex": "("client_secret":"[a-zA-Z0-9-]{24}")",
 			"severity": "5"
 		},
 		{
@@ -419,7 +416,7 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "heroku_api_key",
-			"regex":"(HEROKU_API_KEY|HEROKU_API_TOKEN|HEROKU_API_SECRET|heroku_api_key|heroku_api_token|heroku_api_secret|heroku_key|HEROKU_TOKEN|HEROKU_AUTH|heroku_auth|herokuAuth|heroku_auth_token)[\W|\s]{1,}([0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12})\W",
+			"regex":"(HEROKU_API_KEY|HEROKU_API_TOKEN|HEROKU_API_SECRET|heroku_api_key|heroku_api_token|heroku_api_secret|heroku_key|HEROKU_TOKEN|HEROKU_AUTH|heroku_auth|herokuAuth|heroku_auth_token)[a-zA-Z0-9|\s]{1,}([0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12})a-zA-Z0-9",
 			"severity": "5"
 		},
 		{
@@ -434,7 +431,7 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "json_web1_token",
-			"regex":"(eyJ[\w-]{10,}\.eyJ[\w-]{10,}\.[\w-]{10,})",
+			"regex":"(eyJ[a-zA-Z0-9-]{10,}\.eyJ[a-zA-Z0-9-]{10,}\.[a-zA-Z0-9-]{10,})",
 			"severity": "5"
 		},
 		{
@@ -449,7 +446,7 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "mailchimp",
-			"regex":"(W(?:[a-f0-9]{32}(-us[0-9]{1,2}))\W)",
+			"regex":"(W(?:[a-f0-9]{32}(-us[0-9]{1,2}))a-zA-Z0-9)",
 			"severity": "5"
 		},
 		{
@@ -464,7 +461,7 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "npm_token",
-			"regex":"([\w]{8}-[\w]{4}-[\w]{4}-[\w]{4}-[\w]{12})",
+			"regex":"([a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12})",
 			"severity": "5"
 		},
 		{
@@ -479,7 +476,7 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "paypal",
-			"regex":"\[\W]{1,2}([E][A-Z]{1}[a-zA-Z0-9_-]{78})[\W]{1,2}$",
+			"regex":"\[a-zA-Z0-9]{1,2}([E][A-Z]{1}[a-zA-Z0-9_-]{78})[a-zA-Z0-9]{1,2}$",
 			"severity": "5"
 		},
 		{
@@ -499,7 +496,7 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "sendgrid_api_key",
-			"regex":"(SG\.[\w-]{16,32}\.[\w-]{16,64})",
+			"regex":"(SG\.[a-zA-Z0-9-]{16,32}\.[a-zA-Z0-9-]{16,64})",
 			"severity": "5"
 		},
 		{
@@ -529,7 +526,7 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "twitter",
-			"regex":"([\W]{1,2}([a-zA-Z0-9]{50})[\W]{1,2}$)",
+			"regex":"([a-zA-Z0-9]{1,2}([a-zA-Z0-9]{50})[a-zA-Z0-9]{1,2}$)",
 			"severity": "5"
 		},
 		{
@@ -549,10 +546,7 @@ var configbyte = []byte(`
 		},
 		{
 			"title": "apikey_patterns",
-			"regex": "(?i)apikey[:](?:["'
-		]?[\w-_|
-		]+[
-			"']?)",
+			"regex": "(?i)apikey[:](?:["']?[a-zA-Z0-9-_|]+["']?)",
 			"severity": "5"
 		},
 		{

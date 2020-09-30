@@ -10,6 +10,7 @@ import (
 	"regexp"
 
 	"github.com/spf13/viper"
+	"github.com/tidwall/limiter"
 )
 
 const (
@@ -37,10 +38,12 @@ var filter = regexp.MustCompile("[[:^ascii:]]")
 
 func main() {
 	var folder string
+	var limit int
 	flag.StringVar(&folder, "f", ".", "Scan a folder.")
+	flag.IntVar(&limit, "l", 10, "Limit of go routine.")
 	flag.Parse()
 
-	if folder == "" {
+	if folder == "" || limit < 0 {
 		flag.PrintDefaults()
 		os.Exit(0)
 	}
@@ -60,13 +63,17 @@ func main() {
 		config.Checks[index].Compiled = regexp.MustCompile(config.Checks[index].Regex)
 	}
 
-	walkPath(folder, config)
+	walkPath(folder, config, limit)
 }
 
-func walkPath(root string, config config) {
+func walkPath(root string, config config, limit int) {
+	goroutine := limiter.New(limit)
+
 	filepath.Walk(root,
 		func(path string, file os.FileInfo, err error) error {
 			if !file.IsDir() {
+				goroutine.Begin()
+				defer goroutine.End()
 				readFile(path, config)
 			}
 			return nil
@@ -88,5 +95,10 @@ func searchText(filename string, data []byte, config config) {
 		for _, match := range matches {
 			fmt.Printf(blue+" "+white+" "+red+"\n", filename, check.Title, match)
 		}
+	}
+
+	if true {
+		fmt.Printf("End of analysis: %s\n", filename)
+
 	}
 }

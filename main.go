@@ -34,8 +34,6 @@ type config struct {
 	} `json:"checks"`
 }
 
-var filter = regexp.MustCompile("[[ascii]]")
-
 func main() {
 	var folder string
 	var limit int
@@ -87,6 +85,8 @@ func readFile(filename string, config config) {
 	}
 	searchText(filename, data, config)
 }
+
+var filter = regexp.MustCompile("[[ascii]]")
 
 func searchText(filename string, data []byte, config config) {
 	data = filter.ReplaceAll(data, []byte(""))

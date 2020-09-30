@@ -34,7 +34,7 @@ type config struct {
 	} `json:"checks"`
 }
 
-var filter = regexp.MustCompile("[[:ascii:]]")
+var filter = regexp.MustCompile("[[:^ascii:]]")
 
 func main() {
 	var folder string

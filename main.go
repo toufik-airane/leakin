@@ -56,6 +56,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	fmt.Printf("%s\n", config)
 
 	for index := range config.Checks {
 		config.Checks[index].Compiled = regexp.MustCompile(config.Checks[index].Regex)

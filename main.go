@@ -48,8 +48,8 @@ func main() {
 
 	viper.SetConfigType("json")
 	err := viper.ReadConfig(bytes.NewBuffer(configbyte))
-	if err != nil { // Handle errors reading the config file
-		panic(fmt.Errorf("Fatal error config file: %s \n", err))
+	if err != nil {
+		panic(err)
 	}
 
 	var config config
@@ -58,7 +58,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("%s\n", config)
 
 	for index := range config.Checks {
 		config.Checks[index].Compiled = regexp.MustCompile(config.Checks[index].Regex)

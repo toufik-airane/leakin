@@ -47,10 +47,12 @@ func main() {
 	}
 
 	viper.SetConfigType("json")
-	viper.ReadConfig(bytes.NewBuffer(configbyte))
+	err := viper.ReadConfig(bytes.NewBuffer(configbyte))
+	if err != nil { // Handle errors reading the config file
+		panic(fmt.Errorf("Fatal error config file: %s \n", err))
+	}
 
 	var config config
-	var err error
 
 	err = viper.Unmarshal(&config)
 	if err != nil {

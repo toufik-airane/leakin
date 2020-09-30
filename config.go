@@ -120,61 +120,6 @@ var configbyte = []byte(`
 			"severity": 7
 		},
 		{
-			"title": "Generic Key",
-			"regex": "[0-9a-z_]*(key)\\\\*['\"]?\\s*(:|=|=>|:=|\\|\\||;s:\\d+:)\\s*\\\\*['\"]([0-9]+[a-z]+[0-9a-z\\.\\-_=]{4,}|[a-z]+[0-9]+[0-9a-z\\.\\-_]{4,})",
-			"severity": 1
-		},
-		{
-			"title": "Generic Key",
-			"regex": "[0-9a-z_]*(KEY)\\s*=\\s*['\"]?([0-9]+[a-z]+[0-9a-z\\.\\-_=]{4,}|[a-z]+[0-9]+[0-9a-z\\.\\-_]{4,})",
-			"severity": 1
-		},
-		{
-			"title": "Generic Token",
-			"regex": "[0-9a-z_]*(token)\\\\*['\"]?\\s*(:|=|=>|:=|\\|\\||;s:\\d+:)\\s*\\\\*['\"]([0-9]+[a-z]+[0-9a-z\\.\\-_=]{4,}|[a-z]+[0-9]+[0-9a-z\\.\\-_]{6,})",
-			"severity": 1
-		},
-		{
-			"title": "Generic Token",
-			"regex": "[0-9a-z_]*(TOKEN)\\s*=\\s*['\"]?([0-9]+[a-z]+[0-9a-z\\.\\-_=]{4,}|[a-z]+[0-9]+[0-9a-z\\.\\-_]{6,})",
-			"severity": 1
-		},
-		{
-			"title": "Generic Secret",
-			"regex": "[0-9a-z_]*(secret)\\\\*['\"]\\s*(:|=|=>|:=|\\|\\||;s:\\d+:)\\s*\\\\*['\"][^\\s'\"]{6,}['\"]?",
-			"severity": 1
-		},
-		{
-			"title": "Generic Secret",
-			"regex": "[0-9a-z_]*(SECRET)\\s*=\\s*['\"]?[^\\s'\"]{6,}['\"]?",
-			"severity": 1
-		},
-		{
-			"title": "Generic Password",
-			"regex": "[0-9a-z_]*(password|passwd|pwd)\\\\*['\"]\\s*(:|=|=>|:=|\\|\\||;s:\\d+:)\\s*\\\\*['\"][^\\s'\"]{6,}['\"]?",
-			"severity": 1
-		},
-		{
-			"title": "Generic Password",
-			"regex": "[0-9a-z_]*(PASSWORD|PASSWD|PWD)\\s*=\\s*['\"]?[^\\s'\"]{6,}['\"]?",
-			"severity": 1
-		},
-		{
-			"title": "Generic Authorization",
-			"regex": "(authorization)\\s*:\\s*(bearer|token|basic)\\s+[0-9a-z\\.\\-_]{6,}",
-			"severity": 1
-		},
-		{
-			"title": "Sensitive URL Credentials",
-			"regex": "(https?|ftp):\\/\\/[^\\s\\{\\}\\(\\)\\<\\>\\/%$'\"]+?:[^\\s\\{\\}\\(\\)\\<\\>\\/%]+?@[^\\s'\"\\)]+",
-			"severity": 7
-		},
-		{
-			"title": "Sensitive URL",
-			"regex": "(https?|ftp):\\/\\/[^\\s\\{\\}\\(\\)\\<\\>\\/%$'\"]+?@[^\\s'\"\\)]+",
-			"severity": 5
-		},
-		{
 			"title": "GitHub Token",
 			"regex": "github(.{0,20})?['\\\"][0-9a-z]{35,40}['\\\"]",
 			"severity": 9
@@ -325,16 +270,6 @@ var configbyte = []byte(`
 			"severity": "5"
 		},
 		{
-			"title": "authorization_basic",
-			"regex":"(basic\s*[a-zA-Z0-9=:_\+\/-]+)",
-			"severity": "5"
-		},
-		{
-			"title": "authorization_bearer",
-			"regex":"(bearer\s*[a-zA-Z0-9_\-\.=:_\+\/]+)",
-			"severity": "5"
-		},
-		{
 			"title": "azure_blob",
 			"regex": "(http(?:s)://.[^><'\" \n\\)]+.blob.core.windows.net/.[^><'\" \n/)]+./)",
 			"severity": "5"
@@ -360,11 +295,6 @@ var configbyte = []byte(`
 			"severity": "5"
 		},
 		{
-			"title": "facebook_oauth",
-			"regex": "([f|F][a|A][c|C][e|E][b|B][o|O][o|O][k|K].{0,30}['\"\\s][0-9a-f]{32}['\"\\s])",
-			"severity": "5"
-		},
-		{
 			"title": "facebook_secret_key",
 			"regex": "(facebook|fb)(.{0,20})?(?-i)['\"][0-9a-f]{32}['\"]",
 			"severity": "5"
@@ -382,11 +312,6 @@ var configbyte = []byte(`
 		{
 			"title": "gcp_service_account",
 			"regex": "("type":"service_account")",
-			"severity": "5"
-		},
-		{
-			"title": "generic_secret",
-			"regex": "(?i)(secret.{0,30}['\"\\s][0-9a-zA-Z]{32,45}['\"\\s])",
 			"severity": "5"
 		},
 		{
@@ -412,11 +337,6 @@ var configbyte = []byte(`
 		{
 			"title": "google_url",
 			"regex": "([0-9]{12}-[a-z0-9]{32}.apps.googleusercontent.com)",
-			"severity": "5"
-		},
-		{
-			"title": "heroku_api_key",
-			"regex":"(HEROKU_API_KEY|HEROKU_API_TOKEN|HEROKU_API_SECRET|heroku_api_key|heroku_api_token|heroku_api_secret|heroku_key|HEROKU_TOKEN|HEROKU_AUTH|heroku_auth|herokuAuth|heroku_auth_token)[a-zA-Z0-9|\s]{1,}([0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12})a-zA-Z0-9",
 			"severity": "5"
 		},
 		{
@@ -532,11 +452,6 @@ var configbyte = []byte(`
 		{
 			"title": "twitter_client_id",
 			"regex": "(twitter(.{0,20})?['\"][0-9a-z]{18,25}['\"])",
-			"severity": "5"
-		},
-		{
-			"title": "twitter_oauth",
-			"regex": "([t|T][w|W][i|I][t|T][t|T][e|E][r|R].{0,30}['\"\\s][0-9a-zA-Z]{35,44}['\"\\s])",
 			"severity": "5"
 		},
 		{

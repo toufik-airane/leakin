@@ -96,9 +96,4 @@ func searchText(filename string, data []byte, config config) {
 			fmt.Printf(blue+" "+white+" "+red+"\n", filename, check.Title, match)
 		}
 	}
-
-	if true {
-		fmt.Printf("End of analysis: %s\n", filename)
-
-	}
 }

@@ -56,7 +56,7 @@ var configbyte = []byte(`
         },
         {
             "title": "AWS S3 Endpoint",
-            "regex": "[0-9a-z.\\-_]+\\.s3\\.amazonaws\\.com",
+            "regex": "[a-zA-Z0-9.\\-_]+.s3.[a-zA-Z0-9.\\-_]+.amazonaws.com",
             "severity": 1
         },
         {

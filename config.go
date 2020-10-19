@@ -501,7 +501,7 @@ var configbyte = []byte(`
         },
         {
             "title": "aws_access_key_id",
-            "regex": "(?i)(?:A3T|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[a-zA-Z0-9-_]{12,}",
+            "regex": "(?:A3T|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[a-zA-Z0-9-_]{12,}",
             "severity": "5"
         },
         {

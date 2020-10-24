@@ -2,7 +2,7 @@
 
 ### Install
 ```bash
-go get -v -u github.com/toufik-airane/leakin
+go get -v -u github.com/secopslab/leakin
 ```
 
 ### Use

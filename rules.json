@@ -1,0 +1,5448 @@
+[
+ {
+  "id": 0,
+  "title": "AWS API Gateway",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "[0-9a-z]+.execute-api.[0-9a-z.-_]+.amazonaws.com"
+ },
+ {
+  "id": 1,
+  "title": "AWS ARN",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "(?-u:\\b)arn:aws:[a-z0-9-]+:[a-z]{2}-[a-z]+-[0-9]+:[0-9]+:.+"
+ },
+ {
+  "id": 2,
+  "title": "AWS Client ID",
+  "kind": "api-key",
+  "severity": 6,
+  "regex": "(?-u:\\b)(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}"
+ },
+ {
+  "id": 3,
+  "title": "AWS CloudFront",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "[0-9a-z.-_]+.cloudfront.net"
+ },
+ {
+  "id": 4,
+  "title": "AWS EC2 External",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "(?-u:\\b)ec2-[0-9a-z.-_]+.compute(-1)?.amazonaws.com"
+ },
+ {
+  "id": 5,
+  "title": "AWS EC2 Internal",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "[0-9a-z.-_]+.compute(-1)?.internal"
+ },
+ {
+  "id": 6,
+  "title": "AWS ELB",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "[0-9a-z.-_]+.elb.[0-9a-z.-_]+.amazonaws.com"
+ },
+ {
+  "id": 7,
+  "title": "AWS ELB",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "[0-9a-z.-_]+.elb.amazonaws.com"
+ },
+ {
+  "id": 8,
+  "title": "AWS ElasticCache",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "[0-9a-z.-_]+.cache.amazonaws.com"
+ },
+ {
+  "id": 9,
+  "title": "AWS MWS key",
+  "kind": "api-key",
+  "severity": 8,
+  "regex": "(?-u:\\b)amzn.mws.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+ },
+ {
+  "id": 10,
+  "title": "AWS RDS",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "[0-9a-z.-_]+.rds.amazonaws.com"
+ },
+ {
+  "id": 11,
+  "title": "AWS S3 Bucket",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "(?-u:\\b)s3://[0-9a-z.-_/]+"
+ },
+ {
+  "id": 12,
+  "title": "AWS S3 Endpoint",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "[0-9a-z.-_]+.s3-website[0-9a-z.-_]+.amazonaws.com"
+ },
+ {
+  "id": 13,
+  "title": "AWS S3 Endpoint",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "[a-zA-Z0-9.-_]+.s3.[a-zA-Z0-9.-_]+.amazonaws.com"
+ },
+ {
+  "id": 14,
+  "title": "AWS Secret Key",
+  "kind": "api-key",
+  "severity": 7,
+  "regex": "aws(.{0,20})?['\"][0-9a-z/+]{40}['\"]"
+ },
+ {
+  "id": 15,
+  "title": "Braintree API Key",
+  "kind": "api-key",
+  "severity": 9,
+  "regex": "(?-u:\\b)access_token$production$[0-9a-z]{16}$[0-9a-f]{32}"
+ },
+ {
+  "id": 16,
+  "title": "FCM_server_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "(?i)(AAAA[a-zA-Z0-9_-]{7}:[a-zA-Z0-9_-]{140})"
+ },
+ {
+  "id": 17,
+  "title": "Facebook Access Token",
+  "kind": "token",
+  "severity": 6,
+  "regex": "(?-u:\\b)EAACEdEose0cBA[0-9a-z]+"
+ },
+ {
+  "id": 18,
+  "title": "Facebook Client ID",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "(?i)(?-u:\\b)(?:facebook|fb)(?-u:\\b).{0,20}?[\\'\"][0-9]{13,17}[\\'\"]"
+ },
+ {
+  "id": 19,
+  "title": "Facebook Secret Key",
+  "kind": "api-key",
+  "severity": 7,
+  "regex": "(?i)(?-u:\\b)(?:facebook|fb)(?-u:\\b).{0,20}?[\\'\"][0-9a-f]{32}[\\'\"]"
+ },
+ {
+  "id": 20,
+  "title": "Google API Key",
+  "kind": "api-key",
+  "severity": 7,
+  "regex": "(?-u:\\b)AIza[0-9a-z-_]{35}"
+ },
+ {
+  "id": 21,
+  "title": "Google Cloud Platform API key",
+  "kind": "api-key",
+  "severity": 9,
+  "regex": "(?i)(google|gcp|youtube|drive|yt)(.{0,20})?['\"]AIza[0-9A-Za-z_-]{35}['\"]"
+ },
+ {
+  "id": 22,
+  "title": "Google Oauth ID",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "[0-9]+-[0-9a-z_]{32}.apps.googleusercontent.com"
+ },
+ {
+  "id": 23,
+  "title": "Heroku API Key",
+  "kind": "api-key",
+  "severity": 9,
+  "regex": "heroku(.{0,20})?['\"][0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}['\"]"
+ },
+ {
+  "id": 24,
+  "title": "LinkedIn Client ID",
+  "kind": "api-key",
+  "severity": 6,
+  "regex": "linkedin(.{0,20})?['\"][0-9a-z]{12}['\"]"
+ },
+ {
+  "id": 25,
+  "title": "LinkedIn Secret Key",
+  "kind": "api-key",
+  "severity": 7,
+  "regex": "linkedin(.{0,20})?['\"][0-9a-z]{16}['\"]"
+ },
+ {
+  "id": 26,
+  "title": "Mailchimp API Key",
+  "kind": "api-key",
+  "severity": 9,
+  "regex": "[0-9a-f]{32}-us[0-9]{1,2}"
+ },
+ {
+  "id": 27,
+  "title": "Mailgun API Key",
+  "kind": "api-key",
+  "severity": 9,
+  "regex": "(?-u:\\b)key-[0-9a-z]{32}"
+ },
+ {
+  "id": 28,
+  "title": "Slack Token",
+  "kind": "token",
+  "severity": 9,
+  "regex": "(?-u:\\b)xox[baprs]-([0-9a-z-]{10,48})"
+ },
+ {
+  "id": 29,
+  "title": "Square API Key",
+  "kind": "api-key",
+  "severity": 9,
+  "regex": "(?-u:\\b)sq0(atp|csp)-[0-9a-z-_]{22,43}"
+ },
+ {
+  "id": 30,
+  "title": "Stripe Public Live Key",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "(?-u:\\b)pk_live_[0-9a-z]{24}"
+ },
+ {
+  "id": 31,
+  "title": "Stripe Public Test Key",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "(?-u:\\b)pk_test_[0-9a-z]{24}"
+ },
+ {
+  "id": 32,
+  "title": "Stripe Secret Live Key",
+  "kind": "api-key",
+  "severity": 10,
+  "regex": "(?-u:\\b)(sk|rk)_live_[0-9a-z]{24}"
+ },
+ {
+  "id": 33,
+  "title": "Stripe Secret Test Key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "(?-u:\\b)(sk|rk)_test_[0-9a-z]{24}"
+ },
+ {
+  "id": 34,
+  "title": "Telegram Secret",
+  "kind": "api-key",
+  "severity": 7,
+  "regex": "[0-9]{5,}:A[0-9A-Za-z_-]{34}"
+ },
+ {
+  "id": 35,
+  "title": "Trello URL",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "(?-u:\\b)https://trello.com/b/[0-9a-z]/[0-9a-z_-]+"
+ },
+ {
+  "id": 36,
+  "title": "Twilio API Key",
+  "kind": "api-key",
+  "severity": 8,
+  "regex": "(?-u:\\b)SK[0-9a-fA-F]{32}"
+ },
+ {
+  "id": 37,
+  "title": "Twitter Client ID",
+  "kind": "api-key",
+  "severity": 6,
+  "regex": "twitter(.{0,20})?['\"][0-9a-z]{18,25}['\"]"
+ },
+ {
+  "id": 38,
+  "title": "Twitter Secret Key",
+  "kind": "api-key",
+  "severity": 7,
+  "regex": "twitter(.{0,20})?['\"][0-9a-z]{35,44}['\"]"
+ },
+ {
+  "id": 39,
+  "title": "access_key_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "access[_-]?key[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 40,
+  "title": "access_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "access[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 41,
+  "title": "access_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "access[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 42,
+  "title": "account_sid",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "account[_-]?sid[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 43,
+  "title": "admin_email",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "admin[_-]?email[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 44,
+  "title": "adzerk_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "adzerk[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 45,
+  "title": "algolia_admin_key_1",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "algolia[_-]?admin[_-]?key[_-]?1[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 46,
+  "title": "algolia_admin_key_2",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "algolia[_-]?admin[_-]?key[_-]?2[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 47,
+  "title": "algolia_admin_key_mcm",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "algolia[_-]?admin[_-]?key[_-]?mcm[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 48,
+  "title": "algolia_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "algolia[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 49,
+  "title": "algolia_api_key_mcm",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "algolia[_-]?api[_-]?key[_-]?mcm[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 50,
+  "title": "algolia_api_key_search",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "algolia[_-]?api[_-]?key[_-]?search[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 51,
+  "title": "algolia_search_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "algolia[_-]?search[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 52,
+  "title": "algolia_search_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "algolia[_-]?search[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 53,
+  "title": "algolia_search_key_1",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "algolia[_-]?search[_-]?key[_-]?1[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 54,
+  "title": "alias_pass",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "alias[_-]?pass[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 55,
+  "title": "alicloud_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "alicloud[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 56,
+  "title": "alicloud_secret_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "alicloud[_-]?secret[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 57,
+  "title": "amazon_bucket_name",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "amazon[_-]?bucket[_-]?name[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 58,
+  "title": "amazon_secret_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "amazon[_-]?secret[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 59,
+  "title": "anaconda_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "anaconda[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 60,
+  "title": "android_docs_deploy_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "android[_-]?docs[_-]?deploy[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 61,
+  "title": "ansible_vault_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "ansible[_-]?vault[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 62,
+  "title": "aos_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "aos[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 63,
+  "title": "aos_sec",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "aos[_-]?sec[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 64,
+  "title": "api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 65,
+  "title": "api_key_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "api[_-]?key[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 66,
+  "title": "api_key_sid",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "api[_-]?key[_-]?sid[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 67,
+  "title": "api_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "api[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 68,
+  "title": "apiary_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "apiary[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 69,
+  "title": "apigw_access_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "apigw[_-]?access[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 70,
+  "title": "apikey_patterns",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "(?i)apikey[:](?:['\"]?[a-zA-Z0-9-_|]+['\"]?)"
+ },
+ {
+  "id": 71,
+  "title": "app_bucket_perm",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "app[_-]?bucket[_-]?perm[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 72,
+  "title": "app_report_token_key",
+  "kind": "token",
+  "severity": 5,
+  "regex": "app[_-]?report[_-]?token[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 73,
+  "title": "app_secrete",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "app[_-]?secrete[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 74,
+  "title": "app_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "app[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 75,
+  "title": "appclientsecret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "appclientsecret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 76,
+  "title": "apple_id_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "apple[_-]?id[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 77,
+  "title": "argos_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "argos[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 78,
+  "title": "artifactory",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "(?-u:\\b)(artifactory.{0,50}(\"|')?[a-zA-Z0-9=]{112}(\"|')?)"
+ },
+ {
+  "id": 79,
+  "title": "artifactory_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "artifactory[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 80,
+  "title": "artifacts_aws_access_key_id",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "artifacts[_-]?aws[_-]?access[_-]?key[_-]?id[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 81,
+  "title": "artifacts_aws_secret_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "artifacts[_-]?aws[_-]?secret[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 82,
+  "title": "artifacts_bucket",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "artifacts[_-]?bucket[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 83,
+  "title": "artifacts_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "artifacts[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 84,
+  "title": "artifacts_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "artifacts[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 85,
+  "title": "assistant_iam_apikey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "assistant[_-]?iam[_-]?apikey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 86,
+  "title": "auth0_api_clientsecret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "auth0[_-]?api[_-]?clientsecret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 87,
+  "title": "auth0_client_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "auth0[_-]?client[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 88,
+  "title": "auth_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "auth[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 89,
+  "title": "author_email_addr",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "author[_-]?email[_-]?addr[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 90,
+  "title": "author_npm_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "author[_-]?npm[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 91,
+  "title": "aws_access",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "aws[_-]?access[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 92,
+  "title": "aws_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "aws[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 93,
+  "title": "aws_access_key_id",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "(?-u:\\b)(?:A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}(?-u:\\b)"
+ },
+ {
+  "id": 94,
+  "title": "aws_access_key_id",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "(?-u:\\b)(?:A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}(?-u:\\b)"
+ },
+ {
+  "id": 95,
+  "title": "aws_config_accesskeyid",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "aws[_-]?config[_-]?accesskeyid[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 96,
+  "title": "aws_config_secretaccesskey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "aws[_-]?config[_-]?secretaccesskey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 97,
+  "title": "aws_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "aws[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 98,
+  "title": "aws_patterns",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "(?i)(?:accesskeyid|secretaccesskey|aws_access_key_id|aws_secret_access_key)[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 99,
+  "title": "aws_s3",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "([a-zA-Z0-9_-]+.s3.[a-z0-9_-]+.amazonaws.com)"
+ },
+ {
+  "id": 100,
+  "title": "aws_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "aws[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 101,
+  "title": "aws_secret_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "aws[_-]?secret[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 102,
+  "title": "aws_secret_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "aws[_-]?secret[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 103,
+  "title": "aws_secrets",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "aws[_-]?secrets[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 104,
+  "title": "aws_ses_access_key_id",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "aws[_-]?ses[_-]?access[_-]?key[_-]?id[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 105,
+  "title": "aws_ses_secret_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "aws[_-]?ses[_-]?secret[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 106,
+  "title": "awsaccesskeyid",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "awsaccesskeyid[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 107,
+  "title": "awscn_access_key_id",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "awscn[_-]?access[_-]?key[_-]?id[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 108,
+  "title": "awscn_secret_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "awscn[_-]?secret[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 109,
+  "title": "awssecretkey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "awssecretkey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 110,
+  "title": "azure_blob",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "(?-u:\\b)(http(?:s)://.[^><'\" \n)]+.blob.core.windows.net/.[^><'\" \n/)]+./)"
+ },
+ {
+  "id": 111,
+  "title": "b2_app_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "b2[_-]?app[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 112,
+  "title": "b2_bucket",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "b2[_-]?bucket[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 113,
+  "title": "bintray_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "bintray[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 114,
+  "title": "bintray_apikey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "bintray[_-]?apikey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 115,
+  "title": "bintray_gpg_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "bintray[_-]?gpg[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 116,
+  "title": "bintray_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "bintray[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 117,
+  "title": "bintray_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "bintray[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 118,
+  "title": "bintraykey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "bintraykey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 119,
+  "title": "bluemix_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "bluemix[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 120,
+  "title": "bluemix_auth",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "bluemix[_-]?auth[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 121,
+  "title": "bluemix_pass",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "bluemix[_-]?pass[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 122,
+  "title": "bluemix_pass_prod",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "bluemix[_-]?pass[_-]?prod[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 123,
+  "title": "bluemix_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "bluemix[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 124,
+  "title": "bluemix_pwd",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "bluemix[_-]?pwd[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 125,
+  "title": "bluemix_username",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "bluemix[_-]?username[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 126,
+  "title": "brackets_repo_oauth_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "brackets[_-]?repo[_-]?oauth[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 127,
+  "title": "browser_stack_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "browser[_-]?stack[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 128,
+  "title": "browserstack_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "browserstack[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 129,
+  "title": "bucketeer_aws_access_key_id",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "bucketeer[_-]?aws[_-]?access[_-]?key[_-]?id[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 130,
+  "title": "bucketeer_aws_secret_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "bucketeer[_-]?aws[_-]?secret[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 131,
+  "title": "built_branch_deploy_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "built[_-]?branch[_-]?deploy[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 132,
+  "title": "bundlesize_github_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "bundlesize[_-]?github[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 133,
+  "title": "bx_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "bx[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 134,
+  "title": "bx_username",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "bx[_-]?username[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 135,
+  "title": "cache_s3_secret_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "cache[_-]?s3[_-]?secret[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 136,
+  "title": "cargo_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "cargo[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 137,
+  "title": "cattle_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "cattle[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 138,
+  "title": "cattle_agent_instance_auth",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "cattle[_-]?agent[_-]?instance[_-]?auth[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 139,
+  "title": "cattle_secret_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "cattle[_-]?secret[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 140,
+  "title": "censys_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "censys[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 141,
+  "title": "certificate_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "certificate[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 142,
+  "title": "cf_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "cf[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 143,
+  "title": "cheverny_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "cheverny[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 144,
+  "title": "chrome_client_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "chrome[_-]?client[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 145,
+  "title": "chrome_refresh_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "chrome[_-]?refresh[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 146,
+  "title": "ci_deploy_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "ci[_-]?deploy[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 147,
+  "title": "ci_project_url",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "ci[_-]?project[_-]?url[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 148,
+  "title": "ci_registry_user",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "ci[_-]?registry[_-]?user[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 149,
+  "title": "ci_server_name",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "ci[_-]?server[_-]?name[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 150,
+  "title": "ci_user_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "ci[_-]?user[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 151,
+  "title": "claimr_database",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "claimr[_-]?database[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 152,
+  "title": "claimr_db",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "claimr[_-]?db[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 153,
+  "title": "claimr_superuser",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "claimr[_-]?superuser[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 154,
+  "title": "claimr_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "claimr[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 155,
+  "title": "cli_e2e_cma_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "cli[_-]?e2e[_-]?cma[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 156,
+  "title": "client_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "client[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 157,
+  "title": "clojars_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "clojars[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 158,
+  "title": "cloud_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "cloud[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 159,
+  "title": "cloudant_archived_database",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "cloudant[_-]?archived[_-]?database[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 160,
+  "title": "cloudant_audited_database",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "cloudant[_-]?audited[_-]?database[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 161,
+  "title": "cloudant_database",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "cloudant[_-]?database[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 162,
+  "title": "cloudant_instance",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "cloudant[_-]?instance[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 163,
+  "title": "cloudant_order_database",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "cloudant[_-]?order[_-]?database[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 164,
+  "title": "cloudant_parsed_database",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "cloudant[_-]?parsed[_-]?database[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 165,
+  "title": "cloudant_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "cloudant[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 166,
+  "title": "cloudant_processed_database",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "cloudant[_-]?processed[_-]?database[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 167,
+  "title": "cloudant_service_database",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "cloudant[_-]?service[_-]?database[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 168,
+  "title": "cloudflare_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "cloudflare[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 169,
+  "title": "cloudflare_auth_email",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "cloudflare[_-]?auth[_-]?email[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 170,
+  "title": "cloudflare_auth_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "cloudflare[_-]?auth[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 171,
+  "title": "cloudflare_email",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "cloudflare[_-]?email[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 172,
+  "title": "cloudinary_url",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "cloudinary[_-]?url[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 173,
+  "title": "cloudinary_url_staging",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "cloudinary[_-]?url[_-]?staging[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 174,
+  "title": "clu_repo_url",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "clu[_-]?repo[_-]?url[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 175,
+  "title": "clu_ssh_private_key_base64",
+  "kind": "private-key",
+  "severity": 5,
+  "regex": "clu[_-]?ssh[_-]?private[_-]?key[_-]?base64[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 176,
+  "title": "cn_access_key_id",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "cn[_-]?access[_-]?key[_-]?id[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 177,
+  "title": "cn_secret_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "cn[_-]?secret[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 178,
+  "title": "cocoapods_trunk_email",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "cocoapods[_-]?trunk[_-]?email[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 179,
+  "title": "cocoapods_trunk_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "cocoapods[_-]?trunk[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 180,
+  "title": "codacy_project_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "codacy[_-]?project[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 181,
+  "title": "codeclimate",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "(?-u:\\b)(codeclima.{0,50}(\"|')?[0-9a-f]{64}(\"|')?)"
+ },
+ {
+  "id": 182,
+  "title": "codeclimate_repo_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "codeclimate[_-]?repo[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 183,
+  "title": "codecov_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "codecov[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 184,
+  "title": "coding_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "coding[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 185,
+  "title": "conekta_apikey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "conekta[_-]?apikey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 186,
+  "title": "consumer_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "consumer[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 187,
+  "title": "consumerkey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "consumerkey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 188,
+  "title": "contentful_access_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "contentful[_-]?access[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 189,
+  "title": "contentful_cma_test_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "contentful[_-]?cma[_-]?test[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 190,
+  "title": "contentful_integration_management_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "contentful[_-]?integration[_-]?management[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 191,
+  "title": "contentful_management_api_access_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "contentful[_-]?management[_-]?api[_-]?access[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 192,
+  "title": "contentful_management_api_access_token_new",
+  "kind": "token",
+  "severity": 5,
+  "regex": "contentful[_-]?management[_-]?api[_-]?access[_-]?token[_-]?new[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 193,
+  "title": "contentful_php_management_test_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "contentful[_-]?php[_-]?management[_-]?test[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 194,
+  "title": "contentful_test_org_cma_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "contentful[_-]?test[_-]?org[_-]?cma[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 195,
+  "title": "contentful_v2_access_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "contentful[_-]?v2[_-]?access[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 196,
+  "title": "conversation_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "conversation[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 197,
+  "title": "conversation_username",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "conversation[_-]?username[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 198,
+  "title": "cos_secrets",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "cos[_-]?secrets[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 199,
+  "title": "coveralls_api_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "coveralls[_-]?api[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 200,
+  "title": "coveralls_repo_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "coveralls[_-]?repo[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 201,
+  "title": "coveralls_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "coveralls[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 202,
+  "title": "coverity_scan_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "coverity[_-]?scan[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 203,
+  "title": "cypress_record_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "cypress[_-]?record[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 204,
+  "title": "danger_github_api_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "danger[_-]?github[_-]?api[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 205,
+  "title": "database_host",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "database[_-]?host[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 206,
+  "title": "database_name",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "database[_-]?name[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 207,
+  "title": "database_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "database[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 208,
+  "title": "database_port",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "database[_-]?port[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 209,
+  "title": "database_user",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "database[_-]?user[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 210,
+  "title": "database_username",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "database[_-]?username[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 211,
+  "title": "datadog_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "datadog[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 212,
+  "title": "datadog_app_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "datadog[_-]?app[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 213,
+  "title": "db_connection",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "db[_-]?connection[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 214,
+  "title": "db_database",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "db[_-]?database[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 215,
+  "title": "db_host",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "db[_-]?host[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 216,
+  "title": "db_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "db[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 217,
+  "title": "db_pw",
+  "kind": "password",
+  "severity": 5,
+  "regex": "db[_-]?pw[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 218,
+  "title": "db_user",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "db[_-]?user[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 219,
+  "title": "db_username",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "db[_-]?username[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 220,
+  "title": "ddg_test_email",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "ddg[_-]?test[_-]?email[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 221,
+  "title": "ddg_test_email_pw",
+  "kind": "password",
+  "severity": 5,
+  "regex": "ddg[_-]?test[_-]?email[_-]?pw[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 222,
+  "title": "ddgc_github_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "ddgc[_-]?github[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 223,
+  "title": "deploy_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "deploy[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 224,
+  "title": "deploy_secure",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "deploy[_-]?secure[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 225,
+  "title": "deploy_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "deploy[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 226,
+  "title": "deploy_user",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "deploy[_-]?user[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 227,
+  "title": "dgpg_passphrase",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "dgpg[_-]?passphrase[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 228,
+  "title": "digitalocean_access_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "digitalocean[_-]?access[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 229,
+  "title": "digitalocean_space",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "(?-u:\\b)(http(?:s)://[^><.'\" \n)]+.[^><.'\" \n)]+.[^><.'\" \n)]+.digitaloceanspaces.com)"
+ },
+ {
+  "id": 230,
+  "title": "digitalocean_ssh_key_body",
+  "kind": "private-key",
+  "severity": 5,
+  "regex": "digitalocean[_-]?ssh[_-]?key[_-]?body[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 231,
+  "title": "digitalocean_ssh_key_ids",
+  "kind": "private-key",
+  "severity": 5,
+  "regex": "digitalocean[_-]?ssh[_-]?key[_-]?ids[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 232,
+  "title": "docker_hub_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "docker[_-]?hub[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 233,
+  "title": "docker_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "docker[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 234,
+  "title": "docker_pass",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "docker[_-]?pass[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 235,
+  "title": "docker_passwd",
+  "kind": "password",
+  "severity": 5,
+  "regex": "docker[_-]?passwd[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 236,
+  "title": "docker_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "docker[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 237,
+  "title": "docker_postgres_url",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "docker[_-]?postgres[_-]?url[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 238,
+  "title": "docker_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "docker[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 239,
+  "title": "dockerhub_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "dockerhub[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 240,
+  "title": "dockerhubpassword",
+  "kind": "password",
+  "severity": 5,
+  "regex": "dockerhubpassword[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 241,
+  "title": "domain",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "(?-u:\\b)http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*(),]|(?:%[0-9a-fA-F][0-9a-fA-F]))[^><'\" \n)]+"
+ },
+ {
+  "id": 242,
+  "title": "doordash_auth_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "doordash[_-]?auth[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 243,
+  "title": "dropbox_oauth_bearer",
+  "kind": "token",
+  "severity": 5,
+  "regex": "dropbox[_-]?oauth[_-]?bearer[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 244,
+  "title": "droplet_travis_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "droplet[_-]?travis[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 245,
+  "title": "dsonar_login",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "dsonar[_-]?login[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 246,
+  "title": "dsonar_projectkey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "dsonar[_-]?projectkey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 247,
+  "title": "elastic_cloud_auth",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "elastic[_-]?cloud[_-]?auth[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 248,
+  "title": "elasticsearch_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "elasticsearch[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 249,
+  "title": "encryption_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "encryption[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 250,
+  "title": "end_user_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "end[_-]?user[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 251,
+  "title": "env_github_oauth_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "env[_-]?github[_-]?oauth[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 252,
+  "title": "env_heroku_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "env[_-]?heroku[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 253,
+  "title": "env_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "env[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 254,
+  "title": "env_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "env[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 255,
+  "title": "env_secret_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "env[_-]?secret[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 256,
+  "title": "env_sonatype_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "env[_-]?sonatype[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 257,
+  "title": "eureka_awssecretkey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "eureka[_-]?awssecretkey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 258,
+  "title": "exp_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "exp[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 259,
+  "title": "facebook_access_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "(?-u:\\b)(EAACEdEose0cBA[0-9A-Za-z]+)"
+ },
+ {
+  "id": 260,
+  "title": "facebook_client_id",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "(?i)(?-u:\\b)(?:facebook|fb)(?-u:\\b).{0,20}?[\\'\"][0-9]{13,17}[\\'\"]"
+ },
+ {
+  "id": 261,
+  "title": "facebook_secret_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "(?i)(?-u:\\b)(?:facebook|fb)(?-u:\\b).{0,20}?[\\'\"][0-9a-f]{32}[\\'\"]"
+ },
+ {
+  "id": 262,
+  "title": "file_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "file[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 263,
+  "title": "firebase_api_json",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "firebase[_-]?api[_-]?json[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 264,
+  "title": "firebase_api_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "firebase[_-]?api[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 265,
+  "title": "firebase_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "firebase[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 266,
+  "title": "firebase_project_develop",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "firebase[_-]?project[_-]?develop[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 267,
+  "title": "firebase_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "firebase[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 268,
+  "title": "firefox_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "firefox[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 269,
+  "title": "flask_secret_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "flask[_-]?secret[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 270,
+  "title": "flickr_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "flickr[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 271,
+  "title": "flickr_api_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "flickr[_-]?api[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 272,
+  "title": "fossa_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "fossa[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 273,
+  "title": "ftp_host",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "ftp[_-]?host[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 274,
+  "title": "ftp_login",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "ftp[_-]?login[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 275,
+  "title": "ftp_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "ftp[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 276,
+  "title": "ftp_pw",
+  "kind": "password",
+  "severity": 5,
+  "regex": "ftp[_-]?pw[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 277,
+  "title": "ftp_user",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "ftp[_-]?user[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 278,
+  "title": "ftp_username",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "ftp[_-]?username[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 279,
+  "title": "gcloud_bucket",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "gcloud[_-]?bucket[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 280,
+  "title": "gcloud_project",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "gcloud[_-]?project[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 281,
+  "title": "gcloud_service_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "gcloud[_-]?service[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 282,
+  "title": "gcp_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "(?-u:\\b)(AIza[0-9A-Za-z-_]{35})"
+ },
+ {
+  "id": 283,
+  "title": "gcr_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "gcr[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 284,
+  "title": "gcs_bucket",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "gcs[_-]?bucket[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 285,
+  "title": "gh_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "gh[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 286,
+  "title": "gh_email",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "gh[_-]?email[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 287,
+  "title": "gh_next_oauth_client_secret",
+  "kind": "token",
+  "severity": 5,
+  "regex": "gh[_-]?next[_-]?oauth[_-]?client[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 288,
+  "title": "gh_next_unstable_oauth_client_id",
+  "kind": "token",
+  "severity": 5,
+  "regex": "gh[_-]?next[_-]?unstable[_-]?oauth[_-]?client[_-]?id[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 289,
+  "title": "gh_next_unstable_oauth_client_secret",
+  "kind": "token",
+  "severity": 5,
+  "regex": "gh[_-]?next[_-]?unstable[_-]?oauth[_-]?client[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 290,
+  "title": "gh_oauth_client_secret",
+  "kind": "token",
+  "severity": 5,
+  "regex": "gh[_-]?oauth[_-]?client[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 291,
+  "title": "gh_oauth_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "gh[_-]?oauth[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 292,
+  "title": "gh_repo_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "gh[_-]?repo[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 293,
+  "title": "gh_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "gh[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 294,
+  "title": "gh_unstable_oauth_client_secret",
+  "kind": "token",
+  "severity": 5,
+  "regex": "gh[_-]?unstable[_-]?oauth[_-]?client[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 295,
+  "title": "ghb_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "ghb[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 296,
+  "title": "ghost_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "ghost[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 297,
+  "title": "git_author_email",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "git[_-]?author[_-]?email[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 298,
+  "title": "git_author_name",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "git[_-]?author[_-]?name[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 299,
+  "title": "git_committer_email",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "git[_-]?committer[_-]?email[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 300,
+  "title": "git_committer_name",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "git[_-]?committer[_-]?name[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 301,
+  "title": "git_email",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "git[_-]?email[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 302,
+  "title": "git_name",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "git[_-]?name[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 303,
+  "title": "git_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "git[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 304,
+  "title": "github_access_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "github[_-]?access[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 305,
+  "title": "github_access_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "[a-zA-Z0-9_-]*:[a-zA-Z0-9_-]+@github.com*"
+ },
+ {
+  "id": 306,
+  "title": "github_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "github[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 307,
+  "title": "github_api_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "github[_-]?api[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 308,
+  "title": "github_auth",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "github[_-]?auth[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 309,
+  "title": "github_auth_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "github[_-]?auth[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 310,
+  "title": "github_client_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "github[_-]?client[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 311,
+  "title": "github_deploy_hb_doc_pass",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "github[_-]?deploy[_-]?hb[_-]?doc[_-]?pass[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 312,
+  "title": "github_deployment_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "github[_-]?deployment[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 313,
+  "title": "github_hunter_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "github[_-]?hunter[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 314,
+  "title": "github_hunter_username",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "github[_-]?hunter[_-]?username[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 315,
+  "title": "github_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "github[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 316,
+  "title": "github_oauth",
+  "kind": "token",
+  "severity": 5,
+  "regex": "github[_-]?oauth[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 317,
+  "title": "github_oauth_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "github[_-]?oauth[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 318,
+  "title": "github_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "github[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 319,
+  "title": "github_pwd",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "github[_-]?pwd[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 320,
+  "title": "github_release_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "github[_-]?release[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 321,
+  "title": "github_repo",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "github[_-]?repo[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 322,
+  "title": "github_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "github[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 323,
+  "title": "github_tokens",
+  "kind": "token",
+  "severity": 5,
+  "regex": "github[_-]?tokens[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 324,
+  "title": "gitlab_user_email",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "gitlab[_-]?user[_-]?email[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 325,
+  "title": "gogs_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "gogs[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 326,
+  "title": "google_account_type",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "google[_-]?account[_-]?type[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 327,
+  "title": "google_client_email",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "google[_-]?client[_-]?email[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 328,
+  "title": "google_client_id",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "google[_-]?client[_-]?id[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 329,
+  "title": "google_client_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "google[_-]?client[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 330,
+  "title": "google_maps_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "google[_-]?maps[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 331,
+  "title": "google_oauth",
+  "kind": "token",
+  "severity": 5,
+  "regex": "(?-u:\\b)(ya29.[0-9A-Za-z-_]+)"
+ },
+ {
+  "id": 332,
+  "title": "google_patterns",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "(?i)(?:google_client_id|google_client_secret|google_client_token)[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 333,
+  "title": "google_private_key",
+  "kind": "private-key",
+  "severity": 5,
+  "regex": "google[_-]?private[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 334,
+  "title": "google_url",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "([0-9]{12}-[a-z0-9]{32}.apps.googleusercontent.com)"
+ },
+ {
+  "id": 335,
+  "title": "gpg_key_name",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "gpg[_-]?key[_-]?name[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 336,
+  "title": "gpg_keyname",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "gpg[_-]?keyname[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 337,
+  "title": "gpg_ownertrust",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "gpg[_-]?ownertrust[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 338,
+  "title": "gpg_passphrase",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "gpg[_-]?passphrase[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 339,
+  "title": "gpg_private_key",
+  "kind": "private-key",
+  "severity": 5,
+  "regex": "gpg[_-]?private[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 340,
+  "title": "gpg_secret_keys",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "gpg[_-]?secret[_-]?keys[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 341,
+  "title": "gradle_publish_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "gradle[_-]?publish[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 342,
+  "title": "gradle_publish_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "gradle[_-]?publish[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 343,
+  "title": "gradle_signing_key_id",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "gradle[_-]?signing[_-]?key[_-]?id[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 344,
+  "title": "gradle_signing_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "gradle[_-]?signing[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 345,
+  "title": "gren_github_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "gren[_-]?github[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 346,
+  "title": "grgit_user",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "grgit[_-]?user[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 347,
+  "title": "hab_auth_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "hab[_-]?auth[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 348,
+  "title": "hab_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "hab[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 349,
+  "title": "hb_codesign_gpg_pass",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "hb[_-]?codesign[_-]?gpg[_-]?pass[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 350,
+  "title": "hb_codesign_key_pass",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "hb[_-]?codesign[_-]?key[_-]?pass[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 351,
+  "title": "heroku_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "heroku[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 352,
+  "title": "heroku_api_key_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "([h|H][e|E][r|R][o|O][k|K][u|U].{0,30}[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12})"
+ },
+ {
+  "id": 353,
+  "title": "heroku_email",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "heroku[_-]?email[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 354,
+  "title": "heroku_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "heroku[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 355,
+  "title": "hockeyapp",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "(?-u:\\b)hockey.{0,50}(\"|')?[0-9a-f]{32}(\"|')?"
+ },
+ {
+  "id": 356,
+  "title": "hockeyapp_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "hockeyapp[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 357,
+  "title": "homebrew_github_api_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "homebrew[_-]?github[_-]?api[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 358,
+  "title": "hub_dxia2_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "hub[_-]?dxia2[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 359,
+  "title": "ij_repo_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "ij[_-]?repo[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 360,
+  "title": "ij_repo_username",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "ij[_-]?repo[_-]?username[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 361,
+  "title": "index_name",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "index[_-]?name[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 362,
+  "title": "integration_test_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "integration[_-]?test[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 363,
+  "title": "integration_test_appid",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "integration[_-]?test[_-]?appid[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 364,
+  "title": "internal_secrets",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "internal[_-]?secrets[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 365,
+  "title": "ios_docs_deploy_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "ios[_-]?docs[_-]?deploy[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 366,
+  "title": "itest_gh_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "itest[_-]?gh[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 367,
+  "title": "jdbc",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "mysql: jdbc:mysql[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 368,
+  "title": "jdbc_databaseurl",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "jdbc[_-]?databaseurl[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 369,
+  "title": "jdbc_host",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "jdbc[_-]?host[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 370,
+  "title": "json_web1_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "(?-u:\\b)(eyJ[a-zA-Z0-9-]{10,}.eyJ[a-zA-Z0-9-]{10,}.[a-zA-Z0-9-]{10,})"
+ },
+ {
+  "id": 371,
+  "title": "jwt_secret",
+  "kind": "token",
+  "severity": 5,
+  "regex": "jwt[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 372,
+  "title": "kafka_admin_url",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "kafka[_-]?admin[_-]?url[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 373,
+  "title": "kafka_instance_name",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "kafka[_-]?instance[_-]?name[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 374,
+  "title": "kafka_rest_url",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "kafka[_-]?rest[_-]?url[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 375,
+  "title": "keystore_pass",
+  "kind": "private-key",
+  "severity": 5,
+  "regex": "keystore[_-]?pass[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 376,
+  "title": "kovan_private_key",
+  "kind": "private-key",
+  "severity": 5,
+  "regex": "kovan[_-]?private[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 377,
+  "title": "kubecfg_s3_path",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "kubecfg[_-]?s3[_-]?path[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 378,
+  "title": "kubeconfig",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "kubeconfig[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 379,
+  "title": "kxoltsn3vogdop92m",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "kxoltsn3vogdop92m[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 380,
+  "title": "leanplum_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "leanplum[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 381,
+  "title": "lektor_deploy_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "lektor[_-]?deploy[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 382,
+  "title": "lektor_deploy_username",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "lektor[_-]?deploy[_-]?username[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 383,
+  "title": "lighthouse_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "lighthouse[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 384,
+  "title": "linkedin_client_id",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "(linkedin(.{0,20})?(?-i)['\"][0-9a-z]{12}['\"])"
+ },
+ {
+  "id": 385,
+  "title": "linkedin_client_secretor lottie_s3_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "linkedin[_-]?client[_-]?secretor lottie[_-]?s3[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 386,
+  "title": "linkedin_secret_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "(linkedin(.{0,20})?['\"][0-9a-z]{16}['\"])"
+ },
+ {
+  "id": 387,
+  "title": "linux_signing_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "linux[_-]?signing[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 388,
+  "title": "ll_publish_url",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "ll[_-]?publish[_-]?url[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 389,
+  "title": "ll_shared_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "ll[_-]?shared[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 390,
+  "title": "looker_test_runner_client_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "looker[_-]?test[_-]?runner[_-]?client[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 391,
+  "title": "lottie_happo_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "lottie[_-]?happo[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 392,
+  "title": "lottie_happo_secret_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "lottie[_-]?happo[_-]?secret[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 393,
+  "title": "lottie_s3_secret_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "lottie[_-]?s3[_-]?secret[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 394,
+  "title": "lottie_upload_cert_key_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "lottie[_-]?upload[_-]?cert[_-]?key[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 395,
+  "title": "lottie_upload_cert_key_store_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "lottie[_-]?upload[_-]?cert[_-]?key[_-]?store[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 396,
+  "title": "magento_auth_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "magento[_-]?auth[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 397,
+  "title": "magento_auth_username",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "magento[_-]?auth[_-]?username [ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 398,
+  "title": "magento_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "magento[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 399,
+  "title": "mail_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "mail[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 400,
+  "title": "mailchimp",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "[a-f0-9]{32}-us[0-9]{1,2}"
+ },
+ {
+  "id": 401,
+  "title": "mailchimp_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "mailchimp[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 402,
+  "title": "mailchimp_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "mailchimp[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 403,
+  "title": "mailer_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "mailer[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 404,
+  "title": "mailgun",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "(?-u:\\b)(key-[0-9a-f]{32})"
+ },
+ {
+  "id": 405,
+  "title": "mailgun_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "(?-u:\\b)key-[0-9a-zA-Z]{32}"
+ },
+ {
+  "id": 406,
+  "title": "mailgun_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "mailgun[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 407,
+  "title": "mailgun_apikey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "mailgun[_-]?apikey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 408,
+  "title": "mailgun_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "mailgun[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 409,
+  "title": "mailgun_priv_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "mailgun[_-]?priv[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 410,
+  "title": "mailgun_pub_apikey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "mailgun[_-]?pub[_-]?apikey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 411,
+  "title": "mailgun_pub_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "mailgun[_-]?pub[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 412,
+  "title": "mailgun_secret_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "mailgun[_-]?secret[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 413,
+  "title": "manage_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "manage[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 414,
+  "title": "manage_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "manage[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 415,
+  "title": "management_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "management[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 416,
+  "title": "managementapiaccesstoken",
+  "kind": "token",
+  "severity": 5,
+  "regex": "managementapiaccesstoken[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 417,
+  "title": "mandrill_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "mandrill[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 418,
+  "title": "manifest_app_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "manifest[_-]?app[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 419,
+  "title": "manifest_app_url",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "manifest[_-]?app[_-]?url[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 420,
+  "title": "mapbox_access_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "mapbox[_-]?access[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 421,
+  "title": "mapbox_api_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "mapbox[_-]?api[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 422,
+  "title": "mapbox_aws_access_key_id",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "mapbox[_-]?aws[_-]?access[_-]?key[_-]?id[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 423,
+  "title": "mapbox_aws_secret_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "mapbox[_-]?aws[_-]?secret[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 424,
+  "title": "mapboxaccesstoken",
+  "kind": "token",
+  "severity": 5,
+  "regex": "mapboxaccesstoken[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 425,
+  "title": "mg_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "mg[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 426,
+  "title": "mg_public_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "mg[_-]?public[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 427,
+  "title": "mh_apikey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "mh[_-]?apikey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 428,
+  "title": "mh_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "mh[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 429,
+  "title": "mile_zero_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "mile[_-]?zero[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 430,
+  "title": "minio_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "minio[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 431,
+  "title": "minio_secret_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "minio[_-]?secret[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 432,
+  "title": "multi_bob_sid",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "multi[_-]?bob[_-]?sid[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 433,
+  "title": "multi_connect_sid",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "multi[_-]?connect[_-]?sid[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 434,
+  "title": "multi_disconnect_sid",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "multi[_-]?disconnect[_-]?sid[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 435,
+  "title": "multi_workflow_sid",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "multi[_-]?workflow[_-]?sid[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 436,
+  "title": "multi_workspace_sid",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "multi[_-]?workspace[_-]?sid[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 437,
+  "title": "my_secret_env",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "my[_-]?secret[_-]?env[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 438,
+  "title": "mysql_database",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "mysql[_-]?database[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 439,
+  "title": "mysql_hostname",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "mysql[_-]?hostname[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 440,
+  "title": "mysql_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "mysql[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 441,
+  "title": "mysql_root_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "mysql[_-]?root[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 442,
+  "title": "mysql_user",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "mysql[_-]?user[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 443,
+  "title": "mysql_username",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "mysql[_-]?username[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 444,
+  "title": "mysqlmasteruser",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "mysqlmasteruser[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 445,
+  "title": "mysqlsecret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "mysqlsecret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 446,
+  "title": "nativeevents",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "nativeevents[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 447,
+  "title": "netlify_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "netlify[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 448,
+  "title": "new_relic_beta_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "new[_-]?relic[_-]?beta[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 449,
+  "title": "nexus_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "nexus[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 450,
+  "title": "nexuspassword",
+  "kind": "password",
+  "severity": 5,
+  "regex": "nexuspassword[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 451,
+  "title": "ngrok_auth_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "ngrok[_-]?auth[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 452,
+  "title": "ngrok_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "ngrok[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 453,
+  "title": "node_env",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "node[_-]?env[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 454,
+  "title": "node_pre_gyp_accesskeyid",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "node[_-]?pre[_-]?gyp[_-]?accesskeyid[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 455,
+  "title": "node_pre_gyp_github_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "node[_-]?pre[_-]?gyp[_-]?github[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 456,
+  "title": "node_pre_gyp_secretaccesskey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "node[_-]?pre[_-]?gyp[_-]?secretaccesskey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 457,
+  "title": "non_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "non[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 458,
+  "title": "now_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "now[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 459,
+  "title": "npm_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "npm[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 460,
+  "title": "npm_api_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "npm[_-]?api[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 461,
+  "title": "npm_auth_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "npm[_-]?auth[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 462,
+  "title": "npm_email",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "npm[_-]?email[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 463,
+  "title": "npm_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "npm[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 464,
+  "title": "npm_secret_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "npm[_-]?secret[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 465,
+  "title": "nuget_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "(?-u:\\b)(oy2[a-z0-9]{43})"
+ },
+ {
+  "id": 466,
+  "title": "nuget_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "nuget[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 467,
+  "title": "nuget_apikey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "nuget[_-]?apikey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 468,
+  "title": "nuget_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "nuget[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 469,
+  "title": "numbers_service_pass",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "numbers[_-]?service[_-]?pass[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 470,
+  "title": "oauth_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "oauth[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 471,
+  "title": "object_storage_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "object[_-]?storage[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 472,
+  "title": "object_storage_region_name",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "object[_-]?storage[_-]?region[_-]?name[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 473,
+  "title": "object_store_bucket",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "object[_-]?store[_-]?bucket[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 474,
+  "title": "object_store_creds",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "object[_-]?store[_-]?creds[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 475,
+  "title": "oc_pass",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "oc[_-]?pass[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 476,
+  "title": "octest_app_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "octest[_-]?app[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 477,
+  "title": "octest_app_username",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "octest[_-]?app[_-]?username[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 478,
+  "title": "octest_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "octest[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 479,
+  "title": "ofta_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "ofta[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 480,
+  "title": "ofta_region",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "ofta[_-]?region[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 481,
+  "title": "ofta_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "ofta[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 482,
+  "title": "okta_client_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "okta[_-]?client[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 483,
+  "title": "okta_oauth2_client_secret",
+  "kind": "token",
+  "severity": 5,
+  "regex": "okta[_-]?oauth2[_-]?client[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 484,
+  "title": "okta_oauth2_clientsecret",
+  "kind": "token",
+  "severity": 5,
+  "regex": "okta[_-]?oauth2[_-]?clientsecret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 485,
+  "title": "omise_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "omise[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 486,
+  "title": "omise_pkey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "omise[_-]?pkey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 487,
+  "title": "omise_pubkey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "omise[_-]?pubkey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 488,
+  "title": "omise_skey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "omise[_-]?skey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 489,
+  "title": "onesignal_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "onesignal[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 490,
+  "title": "onesignal_user_auth_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "onesignal[_-]?user[_-]?auth[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 491,
+  "title": "open_whisk_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "open[_-]?whisk[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 492,
+  "title": "openwhisk_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "openwhisk[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 493,
+  "title": "org_gradle_project_sonatype_nexus_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "org[_-]?gradle[_-]?project[_-]?sonatype[_-]?nexus[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 494,
+  "title": "org_project_gradle_sonatype_nexus_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "org[_-]?project[_-]?gradle[_-]?sonatype[_-]?nexus[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 495,
+  "title": "os_auth_url",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "os[_-]?auth[_-]?url[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 496,
+  "title": "os_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "os[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 497,
+  "title": "ossrh_jira_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "ossrh[_-]?jira[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 498,
+  "title": "ossrh_pass",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "ossrh[_-]?pass[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 499,
+  "title": "ossrh_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "ossrh[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 500,
+  "title": "ossrh_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "ossrh[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 501,
+  "title": "ossrh_username",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "ossrh[_-]?username[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 502,
+  "title": "outlook_team",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "(?-u:\\b)(https://outlook.office.com/webhook/[0-9a-f-]{36}@)"
+ },
+ {
+  "id": 503,
+  "title": "packagecloud_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "packagecloud[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 504,
+  "title": "pagerduty_apikey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "pagerduty[_-]?apikey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 505,
+  "title": "parse_js_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "parse[_-]?js[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 506,
+  "title": "passwordtravis",
+  "kind": "password",
+  "severity": 5,
+  "regex": "passwordtravis[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 507,
+  "title": "paypal_braintree_access_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "(?-u:\\b)(access_token$production$[0-9a-z]{16}$[0-9a-f]{32})"
+ },
+ {
+  "id": 508,
+  "title": "paypal_client_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "paypal[_-]?client[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 509,
+  "title": "percy_project",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "percy[_-]?project[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 510,
+  "title": "percy_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "percy[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 511,
+  "title": "personal_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "personal[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 512,
+  "title": "personal_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "personal[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 513,
+  "title": "pg_database",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "pg[_-]?database[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 514,
+  "title": "pg_host",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "pg[_-]?host[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 515,
+  "title": "places_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "places[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 516,
+  "title": "places_apikey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "places[_-]?apikey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 517,
+  "title": "plotly_apikey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "plotly[_-]?apikey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 518,
+  "title": "plugin_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "plugin[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 519,
+  "title": "postgres_env_postgres_db",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "postgres[_-]?env[_-]?postgres[_-]?db[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 520,
+  "title": "postgres_env_postgres_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "postgres[_-]?env[_-]?postgres[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 521,
+  "title": "postgresql_db",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "postgresql[_-]?db[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 522,
+  "title": "postgresql_pass",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "postgresql[_-]?pass[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 523,
+  "title": "prebuild_auth",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "prebuild[_-]?auth[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 524,
+  "title": "preferred_username",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "preferred[_-]?username[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 525,
+  "title": "pring_mail_username",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "pring[_-]?mail[_-]?username[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 526,
+  "title": "private_signing_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "private[_-]?signing[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 527,
+  "title": "prod_access_key_id",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "prod[_-]?access[_-]?key[_-]?id[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 528,
+  "title": "prod_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "prod[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 529,
+  "title": "prod_secret_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "prod[_-]?secret[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 530,
+  "title": "project_config",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "project[_-]?config[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 531,
+  "title": "publish_access",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "publish[_-]?access[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 532,
+  "title": "publish_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "publish[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 533,
+  "title": "publish_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "publish[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 534,
+  "title": "pushover_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "pushover[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 535,
+  "title": "pypi_passowrd",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "pypi[_-]?passowrd[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 536,
+  "title": "qiita_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "qiita[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 537,
+  "title": "quip_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "quip[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 538,
+  "title": "rabbitmq_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "rabbitmq[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 539,
+  "title": "randrmusicapiaccesstoken",
+  "kind": "token",
+  "severity": 5,
+  "regex": "randrmusicapiaccesstoken[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 540,
+  "title": "redis_stunnel_urls",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "redis[_-]?stunnel[_-]?urls[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 541,
+  "title": "rediscloud_url",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "rediscloud[_-]?url[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 542,
+  "title": "refresh_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "refresh[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 543,
+  "title": "registry_pass",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "registry[_-]?pass[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 544,
+  "title": "registry_secure",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "registry[_-]?secure[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 545,
+  "title": "release_gh_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "release[_-]?gh[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 546,
+  "title": "release_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "release[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 547,
+  "title": "reporting_webdav_pwd",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "reporting[_-]?webdav[_-]?pwd[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 548,
+  "title": "reporting_webdav_url",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "reporting[_-]?webdav[_-]?url[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 549,
+  "title": "repotoken",
+  "kind": "token",
+  "severity": 5,
+  "regex": "repotoken[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 550,
+  "title": "rest_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "rest[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 551,
+  "title": "rinkeby_private_key",
+  "kind": "private-key",
+  "severity": 5,
+  "regex": "rinkeby[_-]?private[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 552,
+  "title": "ropsten_private_key",
+  "kind": "private-key",
+  "severity": 5,
+  "regex": "ropsten[_-]?private[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 553,
+  "title": "route53_access_key_id",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "route53[_-]?access[_-]?key[_-]?id[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 554,
+  "title": "rtd_key_pass",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "rtd[_-]?key[_-]?pass[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 555,
+  "title": "rtd_store_pass",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "rtd[_-]?store[_-]?pass[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 556,
+  "title": "rubygems_auth_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "rubygems[_-]?auth[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 557,
+  "title": "s3_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "s3[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 558,
+  "title": "s3_access_key_id",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "s3[_-]?access[_-]?key[_-]?id[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 559,
+  "title": "s3_bucket_name_app_logs",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "s3[_-]?bucket[_-]?name[_-]?app[_-]?logs[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 560,
+  "title": "s3_bucket_name_assets",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "s3[_-]?bucket[_-]?name[_-]?assets[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 561,
+  "title": "s3_external_3_amazonaws_com",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "s3[_-]?external[_-]?3[_-]?amazonaws[_-]?com[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 562,
+  "title": "s3_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "s3[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 563,
+  "title": "s3_key_app_logs",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "s3[_-]?key[_-]?app[_-]?logs[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 564,
+  "title": "s3_key_assets",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "s3[_-]?key[_-]?assets[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 565,
+  "title": "s3_secret_app_logs",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "s3[_-]?secret[_-]?app[_-]?logs[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 566,
+  "title": "s3_secret_assets",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "s3[_-]?secret[_-]?assets[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 567,
+  "title": "s3_secret_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "s3[_-]?secret[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 568,
+  "title": "s3_user_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "s3[_-]?user[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 569,
+  "title": "sacloud_access_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "sacloud[_-]?access[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 570,
+  "title": "sacloud_access_token_secret",
+  "kind": "token",
+  "severity": 5,
+  "regex": "sacloud[_-]?access[_-]?token[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 571,
+  "title": "sacloud_api",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "sacloud[_-]?api[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 572,
+  "title": "salesforce_bulk_test_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "salesforce[_-]?bulk[_-]?test[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 573,
+  "title": "salesforce_bulk_test_security_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "salesforce[_-]?bulk[_-]?test[_-]?security[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 574,
+  "title": "sandbox_access_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "sandbox[_-]?access[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 575,
+  "title": "sandbox_aws_access_key_id",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "sandbox[_-]?aws[_-]?access[_-]?key[_-]?id[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 576,
+  "title": "sandbox_aws_secret_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "sandbox[_-]?aws[_-]?secret[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 577,
+  "title": "sauce_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "sauce[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 578,
+  "title": "sauce_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "(?-u:\\b)(sauce.{0,50}(\"|')?[0-9a-f-]{36}(\"|')?)"
+ },
+ {
+  "id": 579,
+  "title": "scrutinizer_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "scrutinizer[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 580,
+  "title": "sdr_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "sdr[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 581,
+  "title": "secret_0",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "secret[_-]?0[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 582,
+  "title": "secret_1",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "secret[_-]?1[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 583,
+  "title": "secret_10",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "secret[_-]?10[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 584,
+  "title": "secret_11",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "secret[_-]?11[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 585,
+  "title": "secret_2",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "secret[_-]?2[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 586,
+  "title": "secret_3",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "secret[_-]?3[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 587,
+  "title": "secret_4",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "secret[_-]?4[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 588,
+  "title": "secret_5",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "secret[_-]?5[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 589,
+  "title": "secret_6",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "secret[_-]?6[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 590,
+  "title": "secret_7",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "secret[_-]?7[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 591,
+  "title": "secret_8",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "secret[_-]?8[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 592,
+  "title": "secret_9",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "secret[_-]?9[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 593,
+  "title": "secret_key_base",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "secret[_-]?key[_-]?base[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 594,
+  "title": "secretaccesskey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "secretaccesskey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 595,
+  "title": "secretkey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "secretkey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 596,
+  "title": "segment_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "segment[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 597,
+  "title": "selion_log_level_dev",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "selion[_-]?log[_-]?level[_-]?dev[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 598,
+  "title": "selion_selenium_host",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "selion[_-]?selenium[_-]?host[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 599,
+  "title": "sendgrid",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "sendgrid[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 600,
+  "title": "sendgrid_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "(?-u:\\b)SG\\.[A-Za-z0-9_-]{16,32}\\.[A-Za-z0-9_-]{16,64}(?-u:\\b)"
+ },
+ {
+  "id": 601,
+  "title": "sendgrid_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "(?-u:\\b)SG\\.[A-Za-z0-9_-]{16,32}\\.[A-Za-z0-9_-]{16,64}(?-u:\\b)"
+ },
+ {
+  "id": 602,
+  "title": "sendgrid_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "sendgrid[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 603,
+  "title": "sendgrid_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "sendgrid[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 604,
+  "title": "sendgrid_user",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "sendgrid[_-]?user[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 605,
+  "title": "sendgrid_username",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "sendgrid[_-]?username[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 606,
+  "title": "sendwithus_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "sendwithus[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 607,
+  "title": "sentry_auth_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "sentry[_-]?auth[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 608,
+  "title": "sentry_default_org",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "sentry[_-]?default[_-]?org[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 609,
+  "title": "sentry_endpoint",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "sentry[_-]?endpoint[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 610,
+  "title": "sentry_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "sentry[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 611,
+  "title": "service_account_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "service[_-]?account[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 612,
+  "title": "ses_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "ses[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 613,
+  "title": "ses_secret_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "ses[_-]?secret[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 614,
+  "title": "setdstaccesskey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "setdstaccesskey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 615,
+  "title": "setdstsecretkey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "setdstsecretkey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 616,
+  "title": "setsecretkey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "setsecretkey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 617,
+  "title": "signing_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "signing[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 618,
+  "title": "signing_key_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "signing[_-]?key[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 619,
+  "title": "signing_key_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "signing[_-]?key[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 620,
+  "title": "signing_key_sid",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "signing[_-]?key[_-]?sid[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 621,
+  "title": "slack_api_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "(?-u:\\b)(xox[aboprs]-([0-9a-zA-Z-]{8,})?)"
+ },
+ {
+  "id": 622,
+  "title": "slack_webhook_url",
+  "kind": "endpoint",
+  "severity": 1,
+  "regex": "(?-u:\\b)(hooks.slack.com/services/T[A-Z0-9]{8}/B[A-Z0-9]{8}/[a-zA-Z0-9]{1,})"
+ },
+ {
+  "id": 623,
+  "title": "slash_developer_space",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "slash[_-]?developer[_-]?space[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 624,
+  "title": "slash_developer_space_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "slash[_-]?developer[_-]?space[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 625,
+  "title": "slate_user_email",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "slate[_-]?user[_-]?email[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 626,
+  "title": "snoowrap_client_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "snoowrap[_-]?client[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 627,
+  "title": "snoowrap_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "snoowrap[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 628,
+  "title": "snoowrap_refresh_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "snoowrap[_-]?refresh[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 629,
+  "title": "snyk_api_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "snyk[_-]?api[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 630,
+  "title": "snyk_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "snyk[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 631,
+  "title": "socrata_app_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "socrata[_-]?app[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 632,
+  "title": "socrata_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "socrata[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 633,
+  "title": "sonar_organization_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "sonar[_-]?organization[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 634,
+  "title": "sonar_project_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "sonar[_-]?project[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 635,
+  "title": "sonar_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "sonar[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 636,
+  "title": "sonarqube_docs_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "(?-u:\\b)(sonar.{0,50}(\"|')?[0-9a-f]{40}(\"|')?)"
+ },
+ {
+  "id": 637,
+  "title": "sonatype_gpg_key_name",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "sonatype[_-]?gpg[_-]?key[_-]?name[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 638,
+  "title": "sonatype_gpg_passphrase",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "sonatype[_-]?gpg[_-]?passphrase[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 639,
+  "title": "sonatype_nexus_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "sonatype[_-]?nexus[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 640,
+  "title": "sonatype_pass",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "sonatype[_-]?pass[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 641,
+  "title": "sonatype_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "sonatype[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 642,
+  "title": "sonatype_token_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "sonatype[_-]?token[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 643,
+  "title": "sonatype_token_user",
+  "kind": "token",
+  "severity": 5,
+  "regex": "sonatype[_-]?token[_-]?user[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 644,
+  "title": "sonatypepassword",
+  "kind": "password",
+  "severity": 5,
+  "regex": "sonatypepassword[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 645,
+  "title": "soundcloud_client_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "soundcloud[_-]?client[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 646,
+  "title": "soundcloud_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "soundcloud[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 647,
+  "title": "spaces_access_key_id",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "spaces[_-]?access[_-]?key[_-]?id[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 648,
+  "title": "spaces_secret_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "spaces[_-]?secret[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 649,
+  "title": "spotify_api_access_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "spotify[_-]?api[_-]?access[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 650,
+  "title": "spotify_api_client_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "spotify[_-]?api[_-]?client[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 651,
+  "title": "spring_mail_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "spring[_-]?mail[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 652,
+  "title": "sqsaccesskey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "sqsaccesskey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 653,
+  "title": "sqssecretkey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "sqssecretkey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 654,
+  "title": "square_app_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "(?-u:\\b)(sq0[a-z]{3}-[0-9A-Za-z-_]{20,50})"
+ },
+ {
+  "id": 655,
+  "title": "square_reader_sdk_repository_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "square[_-]?reader[_-]?sdk[_-]?repository[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 656,
+  "title": "srcclr_api_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "srcclr[_-]?api[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 657,
+  "title": "ssh_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "(?-u:\\b)(sshpass -p.*['|\"])"
+ },
+ {
+  "id": 658,
+  "title": "sshpass",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "sshpass[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 659,
+  "title": "ssmtp_config",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "ssmtp[_-]?config[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 660,
+  "title": "staging_base_url_runscope",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "staging[_-]?base[_-]?url[_-]?runscope[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 661,
+  "title": "star_test_aws_access_key_id",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "star[_-]?test[_-]?aws[_-]?access[_-]?key[_-]?id[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 662,
+  "title": "star_test_bucket",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "star[_-]?test[_-]?bucket[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 663,
+  "title": "star_test_location",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "star[_-]?test[_-]?location[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 664,
+  "title": "star_test_secret_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "star[_-]?test[_-]?secret[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 665,
+  "title": "starship_account_sid",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "starship[_-]?account[_-]?sid[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 666,
+  "title": "starship_auth_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "starship[_-]?auth[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 667,
+  "title": "stormpath_api_key_id",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "stormpath[_-]?api[_-]?key[_-]?id[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 668,
+  "title": "stormpath_api_key_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "stormpath[_-]?api[_-]?key[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 669,
+  "title": "strip_publishable_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "strip[_-]?publishable[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 670,
+  "title": "strip_secret_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "strip[_-]?secret[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 671,
+  "title": "stripe_private",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "stripe[_-]?private[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 672,
+  "title": "stripe_public",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "stripe[_-]?public[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 673,
+  "title": "stripe_restricted_api",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "(?-u:\\b)(rk_live_[0-9a-zA-Z]{24,34})"
+ },
+ {
+  "id": 674,
+  "title": "stripe_standard_api",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "(?-u:\\b)(sk_live_[0-9a-zA-Z]{24,34})"
+ },
+ {
+  "id": 675,
+  "title": "surge_login",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "surge[_-]?login[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 676,
+  "title": "surge_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "surge[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 677,
+  "title": "svn_pass",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "svn[_-]?pass[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 678,
+  "title": "tesco_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "tesco[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 679,
+  "title": "test_github_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "test[_-]?github[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 680,
+  "title": "test_test",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "test[_-]?test[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 681,
+  "title": "tester_keys_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "tester[_-]?keys[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 682,
+  "title": "thera_oss_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "thera[_-]?oss[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 683,
+  "title": "token_core_java",
+  "kind": "token",
+  "severity": 5,
+  "regex": "token[_-]?core[_-]?java[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 684,
+  "title": "travis_access_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "travis[_-]?access[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 685,
+  "title": "travis_api_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "travis[_-]?api[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 686,
+  "title": "travis_branch",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "travis[_-]?branch[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 687,
+  "title": "travis_com_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "travis[_-]?com[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 688,
+  "title": "travis_e2e_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "travis[_-]?e2e[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 689,
+  "title": "travis_gh_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "travis[_-]?gh[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 690,
+  "title": "travis_pull_request",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "travis[_-]?pull[_-]?request[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 691,
+  "title": "travis_secure_env_vars",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "travis[_-]?secure[_-]?env[_-]?vars[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 692,
+  "title": "travis_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "travis[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 693,
+  "title": "trex_client_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "trex[_-]?client[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 694,
+  "title": "trex_okta_client_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "trex[_-]?okta[_-]?client[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 695,
+  "title": "twilio_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "twilio[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 696,
+  "title": "twilio_api_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "twilio[_-]?api[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 697,
+  "title": "twilio_chat_account_api_service",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "twilio[_-]?chat[_-]?account[_-]?api[_-]?service[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 698,
+  "title": "twilio_configuration_sid",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "twilio[_-]?configuration[_-]?sid[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 699,
+  "title": "twilio_sid",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "twilio[_-]?sid[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 700,
+  "title": "twilio_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "twilio[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 701,
+  "title": "twine_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "twine[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 702,
+  "title": "twitter_client_id",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "(twitter(.{0,20})?['\"][0-9a-z]{18,25}['\"])"
+ },
+ {
+  "id": 703,
+  "title": "twitter_consumer_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "twitter[_-]?consumer[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 704,
+  "title": "twitter_consumer_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "twitter[_-]?consumer[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 705,
+  "title": "twitter_secret_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "twitter(.{0,20})?['\"][0-9a-z]{35,44}['\"]"
+ },
+ {
+  "id": 706,
+  "title": "twitteroauthaccesssecret",
+  "kind": "token",
+  "severity": 5,
+  "regex": "twitteroauthaccesssecret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 707,
+  "title": "twitteroauthaccesstoken",
+  "kind": "token",
+  "severity": 5,
+  "regex": "twitteroauthaccesstoken[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 708,
+  "title": "unity_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "unity[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 709,
+  "title": "unity_serial",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "unity[_-]?serial[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 710,
+  "title": "urban_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "urban[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 711,
+  "title": "urban_master_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "urban[_-]?master[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 712,
+  "title": "urban_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "urban[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 713,
+  "title": "us_east_1_elb_amazonaws_com",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "us[_-]?east[_-]?1[_-]?elb[_-]?amazonaws[_-]?com[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 714,
+  "title": "use_ssh",
+  "kind": "private-key",
+  "severity": 5,
+  "regex": "use[_-]?ssh[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 715,
+  "title": "user_assets_access_key_id",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "user[_-]?assets[_-]?access[_-]?key[_-]?id[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 716,
+  "title": "user_assets_secret_access_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "user[_-]?assets[_-]?secret[_-]?access[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 717,
+  "title": "usertravis",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "usertravis[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 718,
+  "title": "v_sfdc_client_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "v[_-]?sfdc[_-]?client[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 719,
+  "title": "v_sfdc_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "v[_-]?sfdc[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 720,
+  "title": "vip_github_build_repo_deploy_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "vip[_-]?github[_-]?build[_-]?repo[_-]?deploy[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 721,
+  "title": "vip_github_deploy_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "vip[_-]?github[_-]?deploy[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 722,
+  "title": "vip_github_deploy_key_pass",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "vip[_-]?github[_-]?deploy[_-]?key[_-]?pass[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 723,
+  "title": "virustotal_apikey",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "virustotal[_-]?apikey[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 724,
+  "title": "visual_recognition_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "visual[_-]?recognition[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 725,
+  "title": "vscetoken",
+  "kind": "token",
+  "severity": 5,
+  "regex": "vscetoken[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 726,
+  "title": "wakatime_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "wakatime[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 727,
+  "title": "watson_conversation_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "watson[_-]?conversation[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 728,
+  "title": "watson_device_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "watson[_-]?device[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 729,
+  "title": "watson_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "watson[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 730,
+  "title": "widget_basic_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "widget[_-]?basic[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 731,
+  "title": "widget_basic_password_2",
+  "kind": "password",
+  "severity": 5,
+  "regex": "widget[_-]?basic[_-]?password[_-]?2[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 732,
+  "title": "widget_basic_password_3",
+  "kind": "password",
+  "severity": 5,
+  "regex": "widget[_-]?basic[_-]?password[_-]?3[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 733,
+  "title": "widget_basic_password_4",
+  "kind": "password",
+  "severity": 5,
+  "regex": "widget[_-]?basic[_-]?password[_-]?4[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 734,
+  "title": "widget_basic_password_5",
+  "kind": "password",
+  "severity": 5,
+  "regex": "widget[_-]?basic[_-]?password[_-]?5[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 735,
+  "title": "widget_fb_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "widget[_-]?fb[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 736,
+  "title": "widget_fb_password_2",
+  "kind": "password",
+  "severity": 5,
+  "regex": "widget[_-]?fb[_-]?password[_-]?2[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 737,
+  "title": "widget_fb_password_3",
+  "kind": "password",
+  "severity": 5,
+  "regex": "widget[_-]?fb[_-]?password[_-]?3[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 738,
+  "title": "widget_test_server",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "widget[_-]?test[_-]?server[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 739,
+  "title": "wincert_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "wincert[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 740,
+  "title": "wordpress_db_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "wordpress[_-]?db[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 741,
+  "title": "wordpress_db_user",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "wordpress[_-]?db[_-]?user[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 742,
+  "title": "wpjm_phpunit_google_geocode_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "wpjm[_-]?phpunit[_-]?google[_-]?geocode[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 743,
+  "title": "wporg_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "wporg[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 744,
+  "title": "wpt_db_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "wpt[_-]?db[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 745,
+  "title": "wpt_db_user",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "wpt[_-]?db[_-]?user[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 746,
+  "title": "wpt_prepare_dir",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "wpt[_-]?prepare[_-]?dir[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 747,
+  "title": "wpt_report_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "wpt[_-]?report[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 748,
+  "title": "wpt_ssh_connect",
+  "kind": "private-key",
+  "severity": 5,
+  "regex": "wpt[_-]?ssh[_-]?connect[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 749,
+  "title": "wpt_ssh_private_key_base64",
+  "kind": "private-key",
+  "severity": 5,
+  "regex": "wpt[_-]?ssh[_-]?private[_-]?key[_-]?base64[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 750,
+  "title": "www_googleapis_com",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "www[_-]?googleapis[_-]?com[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 751,
+  "title": "yangshun_gh_password",
+  "kind": "password",
+  "severity": 5,
+  "regex": "yangshun[_-]?gh[_-]?password[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 752,
+  "title": "yangshun_gh_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "yangshun[_-]?gh[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 753,
+  "title": "yt_account_client_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "yt[_-]?account[_-]?client[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 754,
+  "title": "yt_account_refresh_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "yt[_-]?account[_-]?refresh[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 755,
+  "title": "yt_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "yt[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 756,
+  "title": "yt_client_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "yt[_-]?client[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 757,
+  "title": "yt_partner_client_secret",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "yt[_-]?partner[_-]?client[_-]?secret[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 758,
+  "title": "yt_partner_refresh_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "yt[_-]?partner[_-]?refresh[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 759,
+  "title": "yt_server_api_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "yt[_-]?server[_-]?api[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 760,
+  "title": "zendesk_travis_github",
+  "kind": "generic",
+  "severity": 5,
+  "regex": "zendesk[_-]?travis[_-]?github[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 761,
+  "title": "zensonatypepassword",
+  "kind": "password",
+  "severity": 5,
+  "regex": "zensonatypepassword[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 762,
+  "title": "zhuliang_gh_token",
+  "kind": "token",
+  "severity": 5,
+  "regex": "zhuliang[_-]?gh[_-]?token[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 763,
+  "title": "zopim_account_key",
+  "kind": "api-key",
+  "severity": 5,
+  "regex": "zopim[_-]?account[_-]?key[ \\t]*[=:][ \\t]*['\\\"]?(?-u:([^\\s'\\\"]{6,120}))"
+ },
+ {
+  "id": 764,
+  "title": "GitHub personal access token",
+  "kind": "token",
+  "severity": 10,
+  "regex": "(?-u:\\b)ghp_[A-Za-z0-9]{36}(?-u:\\b)"
+ },
+ {
+  "id": 765,
+  "title": "GitHub OAuth token",
+  "kind": "token",
+  "severity": 10,
+  "regex": "(?-u:\\b)gho_[A-Za-z0-9]{36}(?-u:\\b)"
+ },
+ {
+  "id": 766,
+  "title": "GitHub app token",
+  "kind": "token",
+  "severity": 10,
+  "regex": "(?-u:\\b)(?:ghu|ghs)_[A-Za-z0-9]{36}(?-u:\\b)"
+ },
+ {
+  "id": 767,
+  "title": "GitHub refresh token",
+  "kind": "token",
+  "severity": 10,
+  "regex": "(?-u:\\b)ghr_[A-Za-z0-9]{36}(?-u:\\b)"
+ },
+ {
+  "id": 768,
+  "title": "GitHub fine-grained PAT",
+  "kind": "token",
+  "severity": 10,
+  "regex": "(?-u:\\b)github_pat_[A-Za-z0-9_]{60,90}(?-u:\\b)"
+ },
+ {
+  "id": 769,
+  "title": "GitLab personal access token",
+  "kind": "token",
+  "severity": 10,
+  "regex": "(?-u:\\b)glpat-[A-Za-z0-9_-]{20}(?-u:\\b)"
+ },
+ {
+  "id": 770,
+  "title": "OpenAI API key",
+  "kind": "api-key",
+  "severity": 10,
+  "regex": "(?-u:\\b)sk-(?:proj-)?[A-Za-z0-9_-]{32,200}(?-u:\\b)"
+ },
+ {
+  "id": 771,
+  "title": "Anthropic API key",
+  "kind": "api-key",
+  "severity": 10,
+  "regex": "(?-u:\\b)sk-ant-[A-Za-z0-9_-]{80,120}(?-u:\\b)"
+ },
+ {
+  "id": 772,
+  "title": "Hugging Face token",
+  "kind": "token",
+  "severity": 10,
+  "regex": "(?-u:\\b)hf_[A-Za-z0-9]{34,40}(?-u:\\b)"
+ },
+ {
+  "id": 773,
+  "title": "npm access token",
+  "kind": "token",
+  "severity": 10,
+  "regex": "(?-u:\\b)npm_[A-Za-z0-9]{36}(?-u:\\b)"
+ },
+ {
+  "id": 774,
+  "title": "PyPI upload token",
+  "kind": "token",
+  "severity": 10,
+  "regex": "(?-u:\\b)pypi-AgEIcHlwaS5vcmc[A-Za-z0-9_-]{50,}"
+ },
+ {
+  "id": 775,
+  "title": "Slack bot/user token",
+  "kind": "token",
+  "severity": 10,
+  "regex": "(?-u:\\b)xox[abposr]-[0-9]{10,13}-[0-9]{10,13}-[A-Za-z0-9-]{20,}"
+ },
+ {
+  "id": 776,
+  "title": "Doppler service token",
+  "kind": "token",
+  "severity": 10,
+  "regex": "(?-u:\\b)dp\\.(?:ct|pt|st|sa)\\.[A-Za-z0-9]{40,44}(?-u:\\b)"
+ },
+ {
+  "id": 777,
+  "title": "Grafana service account token",
+  "kind": "token",
+  "severity": 10,
+  "regex": "(?-u:\\b)glsa_[A-Za-z0-9]{32}_[A-Fa-f0-9]{8}(?-u:\\b)"
+ }
+]

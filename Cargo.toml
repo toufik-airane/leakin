@@ -1,0 +1,32 @@
+[package]
+name = "leakin"
+version = "2.0.0"
+edition = "2021"
+rust-version = "1.75"
+description = "Fast local-disk secret detection: API keys, private keys, and BIP39 mnemonics"
+license = "MIT"
+repository = "https://github.com/toufik-airane/leakin"
+
+[[bin]]
+name = "leakin"
+path = "src/main.rs"
+
+[dependencies]
+aho-corasick = "1"
+clap = { version = "4", features = ["derive"] }
+ignore = "0.4"
+memchr = "2"
+memmap2 = "0.9"
+parking_lot = "0.12.5"
+regex = "1"
+regex-syntax = "0.8"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = true

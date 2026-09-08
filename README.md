@@ -15,7 +15,7 @@ cargo install --path .
 ~ leakin ~/projects
 ~/projects/.env:1:19 [api-key sev6] AWS Client ID AKIAIOSFODNN7EXAMPLE
 ~/projects/wallet.txt:2:11 [mnemonic sev10] BIP39 mnemonic (12 words, checksum valid) abandon abandon … about
-~/projects/.ssh/id_rsa:1:1 [private-key sev10] PEM private key block -----BEGIN RSA PRIVATE KEY-----\nMIIBOgIBAAJBAKj…
+~/projects/.ssh/id_rsa:1:1 [private-key sev10] PEM private key block -----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEAx4f…
 ```
 
 Every finding carries `path:line:col`, the detector kind, a severity, the rule

@@ -247,7 +247,9 @@ fn checksum_valid(words: &[u16]) -> bool {
 mod tests {
     use super::*;
 
-    // Valid phrases with realistic vocabulary (entropy 0x0102..).
+    // Valid phrases with realistic vocabulary, generated here from the fixed
+    // entropy 0x0102..10 / 0x0102..20 so the checksum path is exercised.
+    // Published in this file: never usable as a wallet.
     const V12: &str =
         "absurd avoid scissors anxiety gather lottery category door army half long camera";
     const V24: &str = "absurd avoid scissors anxiety gather lottery category door army half long cage bachelor another expect people blade school educate curtain scrub monitor lady beyond";

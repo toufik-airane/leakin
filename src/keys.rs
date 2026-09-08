@@ -156,7 +156,9 @@ mod tests {
 
     #[test]
     fn wif_checksum_gates_reporting() {
-        // Valid WIF (uncompressed, key = 0x01).
+        // The canonical WIF encoding of private key 0x01 — the single most
+        // published key in Bitcoin, used here only to exercise base58check.
+        // Its address is permanently swept; never send anything to it.
         let good = "5HpHagT65TZzG1PH3CSu63k8DbpvD8s5ip4nEB3kEsreAnchuDf";
         // Same string with one character changed: checksum fails.
         let bad = "5HpHagT65TZzG1PH3CSu63k8DbpvD8s5ip4nEB3kEsreAnchuDg";
@@ -164,12 +166,18 @@ mod tests {
         assert!(find("Bitcoin WIF private key", bad).is_empty());
     }
 
+    /// Bodies in these fixtures are synthetic base64 filler, never real key
+    /// material: `pem_block` only counts base64-alphabet bytes, so nothing is
+    /// lost by keeping actual keys out of this repository.
+    const FAKE_BODY: &str = "QUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVphYmNkZWZnaGlqa2xtbm9wcXJzdHV2\nd3h5ejAxMjM0NTY3ODkrL0FCQ0RFRkdISUpLTE1OT1BRUlNUVVZXWFla";
+
     #[test]
     fn pem_block_captures_body_not_just_header() {
-        let pem = "-----BEGIN RSA PRIVATE KEY-----\nMIIBOgIBAAJBAKj34GkxFhD90vcNLYLInFEX6Ppy1tPf9Cnzj4p4WGeKLs1Pt8Qu\nKUpRKfFLfRYC9AIKjbJTWit+CqvjWYzvQwECAwEAAQ==\n-----END RSA PRIVATE KEY-----";
-        let got = find("PEM private key block", pem);
+        let pem =
+            format!("-----BEGIN RSA PRIVATE KEY-----\n{FAKE_BODY}\n-----END RSA PRIVATE KEY-----");
+        let got = find("PEM private key block", &pem);
         assert_eq!(got.len(), 1);
-        assert!(got[0].contains("MIIBOgIBAAJBAKj"), "body must be included");
+        assert!(got[0].contains("QUJDREVGR0hJSkt"), "body must be included");
     }
 
     #[test]

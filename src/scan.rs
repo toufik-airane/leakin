@@ -269,8 +269,11 @@ mod tests {
 
     #[test]
     fn pem_header_inside_block_is_suppressed() {
-        let pem = "-----BEGIN RSA PRIVATE KEY-----\nMIIBOgIBAAJBAKj34GkxFhD90vcNLYLInFEX6Ppy1tPf9Cnzj4p4WGeKLs1Pt8Qu\n-----END RSA PRIVATE KEY-----\n";
-        let titles: Vec<String> = scan(pem).into_iter().map(|f| f.rule).collect();
+        // Synthetic base64 filler, not real key material.
+        let body = "QUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVphYmNkZWZnaGlqa2xtbm9wcXJz";
+        let pem =
+            format!("-----BEGIN RSA PRIVATE KEY-----\n{body}\n-----END RSA PRIVATE KEY-----\n");
+        let titles: Vec<String> = scan(&pem).into_iter().map(|f| f.rule).collect();
         assert!(titles.contains(&"PEM private key block".to_string()));
         assert!(!titles.contains(&"PEM private key header".to_string()), "got {titles:?}");
     }
@@ -279,7 +282,7 @@ mod tests {
     fn keyword_rules_do_not_fire_inside_a_key_body() {
         // The body contains a sendgrid-shaped run ("SG.<16-32>.<16-64>"); it
         // is base64 of a key, not an API key.
-        let pem = "-----BEGIN OPENSSH PRIVATE KEY-----\nb3BlbnNzaC1rSG.abcdefghijklmnop.qrstuvwxyz0123456789ABCDEFte1kZAAAAB\nMIIBOgIBAAJBAKj34GkxFhD90vcNLYLInFEX6Ppy1tPf9Cnzj4p4WGeKLs1Pt8Qu\n-----END OPENSSH PRIVATE KEY-----\n";
+        let pem = "-----BEGIN OPENSSH PRIVATE KEY-----\nb3BlbnNzaC1rSG.abcdefghijklmnop.qrstuvwxyz0123456789ABCDEFte1kZAAAAB\nQUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVphYmNkZWZnaGlqa2xtbm9w\n-----END OPENSSH PRIVATE KEY-----\n";
         let f = scan(pem);
         assert_eq!(f.len(), 1, "got {:?}", f.iter().map(|f| &f.rule).collect::<Vec<_>>());
         assert_eq!(f[0].kind, Kind::PrivateKey);
